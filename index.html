@@ -1,623 +1,503 @@
 
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Harsh Shukla | Software Developer Portfolio</title>
-    <meta name="description" content="Harsh Shukla is an aspiring Software Developer with expertise in Java, Python, and Data Science. View his projects, skills, and achievements." />
-    <meta name="author" content="Harsh Shukla" />
-
-    <meta property="og:title" content="Harsh Shukla | Software Developer Portfolio" />
-    <meta property="og:description" content="Harsh Shukla is an aspiring Software Developer with expertise in Java, Python, and Data Science. View his projects, skills, and achievements." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-    
-    <!-- SEO tags -->
-    <meta name="keywords" content="Harsh Shukla, Software Developer, Java, Python, Data Science, Flutter, Portfolio, Resume" />
-    <meta name="robots" content="index, follow" />
-    
-    <!-- Font imports -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    
-    <!-- Custom CSS -->
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harsh Shukla | Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-  </head>
-
-  <body>
-    <div id="root">
-      <!-- Navigation -->
-      <header class="header">
-        <div class="container">
-          <div class="navbar">
-            <a href="#home" class="logo">
-              Harsh<span>Shukla</span>
-            </a>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-background text-foreground">
+    <!-- Header -->
+    <header id="header" class="fixed top-0 z-50 w-full transition-all duration-300">
+        <div class="container mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="flex items-center">
+                <a href="#home" class="text-xl md:text-2xl font-bold text-primary">
+                    Harsh<span class="text-foreground">Shukla</span>
+                </a>
+            </div>
             
-            <nav class="nav-desktop">
-              <ul>
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-              </ul>
-              <button id="theme-toggle" aria-label="Toggle theme">
-                <i id="theme-icon" data-lucide="sun"></i>
-              </button>
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center space-x-1">
+                <ul class="flex space-x-1">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="ml-4">
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                </div>
             </nav>
             
-            <div class="mobile-nav-toggle">
-              <button id="theme-toggle-mobile" aria-label="Toggle theme">
-                <i data-lucide="sun"></i>
-              </button>
-              <button id="menu-toggle" aria-label="Toggle menu">
-                <i data-lucide="menu"></i>
-              </button>
+            <!-- Mobile Navigation Button -->
+            <div class="flex md:hidden items-center">
+                <button id="theme-toggle-mobile" class="theme-toggle mr-2" aria-label="Toggle theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <button id="mobile-menu-button" class="mobile-menu-button" aria-label="Toggle menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
             </div>
-          </div>
         </div>
         
         <!-- Mobile Navigation Menu -->
-        <div class="mobile-menu">
-          <div class="mobile-menu-content">
-            <ul>
-              <li><a href="#home" class="mobile-link">Home</a></li>
-              <li><a href="#about" class="mobile-link">About</a></li>
-              <li><a href="#skills" class="mobile-link">Skills</a></li>
-              <li><a href="#projects" class="mobile-link">Projects</a></li>
-              <li><a href="#contact" class="mobile-link">Contact</a></li>
-            </ul>
-          </div>
-        </div>
-      </header>
-
-      <!-- Hero Section -->
-      <section id="home" class="hero">
-        <div class="hero-gradient"></div>
-        <div class="container">
-          <div class="hero-content">
-            <h1 class="hero-title">
-              Shukla Harsh Pravinbhai
-            </h1>
-            <h2 class="hero-subtitle">
-              Aspiring Software Developer
-            </h2>
-            <p class="hero-description">
-              Expertise in Java, Python, and Data Science libraries. Passionate about AI/ML, 
-              backend development, and building scalable applications.
-            </p>
-            <div class="hero-buttons">
-              <a href="#contact" class="btn btn-primary">Contact Me</a>
-              <a href="#projects" class="btn btn-outline">View Projects</a>
-            </div>
-          </div>
-        </div>
-        <a href="#about" class="scroll-down" aria-label="Scroll to About section">
-          <i data-lucide="arrow-down"></i>
-        </a>
-      </section>
-
-      <!-- About Section -->
-      <section id="about" class="about section">
-        <div class="container">
-          <h2 class="section-heading">About Me</h2>
-          
-          <div class="about-grid">
-            <div class="about-objective glass-card">
-              <h3>Objective</h3>
-              <p>
-                Aspiring Software Developer with expertise in Java, Python, and Data Science libraries (Pandas, NumPy, Matplotlib). 
-                Passionate about AI/ML, backend development (PHP, SQL Server), and building scalable applications. 
-                Seeking an opportunity to apply my technical skills in a dynamic work environment.
-              </p>
-            </div>
-            
-            <div class="about-contact glass-card">
-              <div>
-                <h3>Contact Information</h3>
-                <ul class="contact-list">
-                  <li>
-                    <i data-lucide="phone"></i>
-                    <span>+91 9601026883</span>
-                  </li>
-                  <li>
-                    <i data-lucide="mail"></i>
-                    <span>harsh206090307117@gmail.com</span>
-                  </li>
+        <div id="mobile-menu" class="mobile-menu">
+            <div class="flex flex-col items-center justify-center h-full">
+                <ul class="flex flex-col items-center space-y-6">
+                    <li><a href="#home" class="text-xl font-medium" onclick="closeMobileMenu()">Home</a></li>
+                    <li><a href="#about" class="text-xl font-medium" onclick="closeMobileMenu()">About</a></li>
+                    <li><a href="#skills" class="text-xl font-medium" onclick="closeMobileMenu()">Skills</a></li>
+                    <li><a href="#projects" class="text-xl font-medium" onclick="closeMobileMenu()">Projects</a></li>
+                    <li><a href="#contact" class="text-xl font-medium" onclick="closeMobileMenu()">Contact</a></li>
                 </ul>
-              </div>
-              
-              <div class="about-profiles">
-                <h3>Profiles</h3>
-                <div class="profile-links">
-                  <a href="https://www.linkedin.com/in/harsh-shukla-3230a4325/" target="_blank" rel="noopener noreferrer" class="profile-link">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"></path>
-                    </svg>
-                    LinkedIn
-                    <i data-lucide="external-link"></i>
-                  </a>
-                  
-                  <a href="https://github.com/harsh822v" target="_blank" rel="noopener noreferrer" class="profile-link">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"></path>
-                    </svg>
-                    GitHub
-                    <i data-lucide="external-link"></i>
-                  </a>
-                  
-                  <a href="https://harshshukla8822.netlify.app/" target="_blank" rel="noopener noreferrer" class="profile-link">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"></path>
-                    </svg>
-                    Portfolio
-                    <i data-lucide="external-link"></i>
-                  </a>
-                </div>
-              </div>
             </div>
-          </div>
         </div>
-      </section>
+    </header>
 
-      <!-- Education Section -->
-      <section id="education" class="education section">
-        <div class="container">
-          <h2 class="section-heading">Education</h2>
-          
-          <div class="education-grid">
-            <div class="education-card glass-card">
-              <h3>Bachelor of Engineering</h3>
-              <p class="institution">Government Engineering College, Dahod (GTU)</p>
-              <p class="grades">SPI: 6.22 | CGPA: 5.84</p>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-gradient"></div>
+        <div class="container mx-auto px-4">
+            <div class="hero-content">
+                <h1 class="hero-title">Shukla Harsh Pravinbhai</h1>
+                <p class="hero-subtitle typewriter-text">Aspiring Software Developer</p>
+                <p class="hero-description">With expertise in Java, Python, and Data Science libraries. Passionate about AI/ML, backend development, and building scalable applications.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Contact Me</a>
+                    <a href="#about" class="btn btn-outline">Learn More</a>
+                </div>
             </div>
-            
-            <div class="education-card glass-card">
-              <h3>Diploma in Engineering</h3>
-              <p class="institution">C.U. Shah Polytechnic College, Wadhwan (GTU)</p>
-              <p class="grades">SPI: 9.77 | CGPA: 8.67</p>
-            </div>
-            
-            <div class="education-card glass-card">
-              <h3>Secondary Education</h3>
-              <p class="institution">Pragati School, Surendranagar</p>
-              <p class="grades">Grade: 72.78%</p>
-            </div>
-          </div>
         </div>
-      </section>
+        <a href="#about" class="scroll-down">
+            <i class="fa-solid fa-chevron-down"></i>
+        </a>
+    </section>
 
-      <!-- Skills Section -->
-      <section id="skills" class="skills section">
-        <div class="container">
-          <h2 class="section-heading">Skills</h2>
-          
-          <div class="skills-grid">
-            <div class="skill-card glass-card">
-              <h3>Programming</h3>
-              <div class="tech-pills">
-                <div class="tech-pill">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" class="tech-icon">
-                  <span>Java</span>
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container mx-auto px-4">
+            <h2 class="section-heading">About Me</h2>
+            <div class="glass-card p-6 md:p-8 mt-8 animate-fade-in">
+                <div class="mb-6">
+                    <div class="mb-6">
+                        <p class="mb-4">
+                            Aspiring Software Developer with expertise in Java, Python, and Data Science libraries (Pandas, NumPy, Matplotlib). 
+                            Passionate about AI/ML, backend development (PHP, SQL Server), and building scalable applications.
+                        </p>
+                        <p>
+                            Seeking an opportunity to apply my technical skills in a dynamic work environment.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                        <div>
+                            <h3 class="text-xl font-semibold mb-4">Contact Information</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-center">
+                                    <i class="fa-solid fa-phone text-primary mr-3"></i>
+                                    <span>+91 9601026883</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fa-solid fa-envelope text-primary mr-3"></i>
+                                    <span class="break-all">harsh206090307117@gmail.com</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-4">Connect With Me</h3>
+                            <div class="profile-links">
+                                <a href="https://www.linkedin.com/in/harsh-shukla-3230a4325/" target="_blank" class="profile-link">
+                                    <i class="fa-brands fa-linkedin"></i>
+                                    <span>LinkedIn</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square ml-auto"></i>
+                                </a>
+                                <a href="https://github.com/harsh822v" target="_blank" class="profile-link">
+                                    <i class="fa-brands fa-github"></i>
+                                    <span>GitHub</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square ml-auto"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="tech-pill">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="tech-icon">
-                  <span>Python</span>
-                </div>
-                <div class="tech-pill">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas" class="tech-icon">
-                  <span>Pandas</span>
-                </div>
-                <div class="tech-pill">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy" class="tech-icon">
-                  <span>NumPy</span>
-                </div>
-                <div class="tech-pill">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Matplotlib_icon.svg" alt="Matplotlib" class="tech-icon">
-                  <span>Matplotlib</span>
-                </div>
-                <div class="tech-pill">
-                  <img src="https://seeklogo.com/images/S/seaborn-logo-244EB2DEC5-seeklogo.com.png" alt="Seaborn" class="tech-icon">
-                  <span>Seaborn</span>
-                </div>
-                <div class="tech-pill">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="Scikit-learn" class="tech-icon">
-                  <span>Scikit-learn</span>
-                </div>
-                <div class="tech-pill">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask" class="tech-icon">
-                  <span>Flask</span>
-                </div>
-                <div class="tech-pill">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Pickle" class="tech-icon">
-                  <span>Pickle</span>
-                </div>
-              </div>
             </div>
-            
-            <div class="skill-card glass-card">
-              <h3>Web & App Development</h3>
-              <div class="tech-pills">
-                <div class="tech-pill">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter" class="tech-icon">
-                  <span>Flutter</span>
-                </div>
-                <div class="tech-pill">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" class="tech-icon">
-                  <span>PHP</span>
-                </div>
-                <div class="tech-pill">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" class="tech-icon">
-                  <span>HTML</span>
-                </div>
-                <div class="tech-pill">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" class="tech-icon">
-                  <span>CSS</span>
-                </div>
-              </div>
-            </div>
-            
-            <div class="skill-card glass-card">
-              <h3>Development Tools</h3>
-              <div class="tech-pills">
-                <div class="tech-pill">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg" alt="Android Studio" class="tech-icon">
-                  <span>Android Studio</span>
-                </div>
-                <div class="tech-pill">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="tech-icon">
-                  <span>GitHub</span>
-                </div>
-                <div class="tech-pill">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" class="tech-icon">
-                  <span>VS Code</span>
-                </div>
-                <div class="tech-pill">
-                  <img src="https://plugins.jetbrains.com/files/7017/258353/icon/pluginIcon.svg" alt="PlantUML" class="tech-icon">
-                  <span>PlantUML</span>
-                </div>
-                <div class="tech-pill">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" class="tech-icon">
-                  <span>Figma</span>
-                </div>
-              </div>
-            </div>
-            
-            <div class="skill-card glass-card">
-              <h3>Databases</h3>
-              <div class="tech-pills">
-                <div class="tech-pill">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="SQL Server" class="tech-icon">
-                  <span>SQL Server</span>
-                </div>
-                <div class="tech-pill">
-                  <img src="https://www.apachefriends.org/images/xampp-logo-ac950edf.svg" alt="XAMPP" class="tech-icon">
-                  <span>XAMPP</span>
-                </div>
-                <div class="tech-pill">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" class="tech-icon">
-                  <span>PostgreSQL</span>
-                </div>
-              </div>
-            </div>
-            
-            <div class="skill-card glass-card">
-              <h3>APIs</h3>
-              <div class="tech-pills">
-                <div class="tech-pill">
-                  <img src="https://www.usgs.gov/sites/all/themes/usgs_theme/logo.png" alt="USGS API" class="tech-icon">
-                  <span>USGS API</span>
-                </div>
-                <div class="tech-pill">
-                  <img src="https://www.noaa.gov/sites/default/files/styles/square_width_650/public/2021-02/FocusArea__Weather-02.jpg" alt="NOAA API" class="tech-icon">
-                  <span>NOAA API</span>
-                </div>
-                <div class="tech-pill">
-                  <img src="https://openweathermap.org/themes/openweathermap/assets/vendor/owm/img/icons/logo_60x60.png" alt="OpenWeatherMap API" class="tech-icon">
-                  <span>OpenWeatherMap API</span>
-                </div>
-                <div class="tech-pill">
-                  <img src="https://rasa.com/assets/img/rasa-logo.svg" alt="Rasa API" class="tech-icon">
-                  <span>Rasa API</span>
-                </div>
-                <div class="tech-pill">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django API" class="tech-icon">
-                  <span>Django API</span>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-      </section>
+    </section>
 
-      <!-- Projects Section -->
-      <section id="projects" class="projects section">
-        <div class="container">
-          <h2 class="section-heading">Projects</h2>
-          
-          <div class="projects-grid">
-            <div class="project-card glass-card">
-              <div class="project-content">
-                <h3>Career Paths Application</h3>
-                <p class="project-description">
-                  Developed an application aimed at guiding students in their post-10th and diploma in engineering educational decisions. The application helps students identify suitable fields, colleges, or schools based on their interests and test scores.
-                </p>
-                <div class="project-tech">
-                  <span class="tech-label">Frontend:</span>
-                  <span class="tech-value">Flutter</span>
+    <!-- Education Section -->
+    <section id="education" class="section bg-lavender-50">
+        <div class="container mx-auto px-4">
+            <h2 class="section-heading">Education</h2>
+            <div class="education-grid mt-8">
+                <div class="glass-card p-6 animate-fade-in">
+                    <h3>Bachelor of Engineering (B.E.)</h3>
+                    <p class="institution">Government Engineering College, Dahod (GTU)</p>
+                    <p class="grades">SPI: 6.22 | CGPA: 5.84</p>
                 </div>
-                <div class="project-tech">
-                  <span class="tech-label">Backend:</span>
-                  <span class="tech-value">PHP</span>
+                <div class="glass-card p-6 animate-fade-in" style="animation-delay: 100ms;">
+                    <h3>Diploma in Engineering</h3>
+                    <p class="institution">C.U. Shah Polytechnic College, Wadhwan (GTU)</p>
+                    <p class="grades">SPI: 9.77 | CGPA: 8.67</p>
                 </div>
-                <div class="project-tech">
-                  <span class="tech-label">Database:</span>
-                  <span class="tech-value">SQL Server</span>
+                <div class="glass-card p-6 animate-fade-in" style="animation-delay: 200ms;">
+                    <h3>Secondary Education (10th)</h3>
+                    <p class="institution">Pragati School, Surendranagar</p>
+                    <p class="grades">Grade: 72.78%</p>
                 </div>
-                <a href="https://github.com/harsh822v" target="_blank" rel="noopener noreferrer" class="project-link">
-                  <i data-lucide="github"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container mx-auto px-4">
+            <h2 class="section-heading">Skills</h2>
+            <div class="skills-grid mt-8">
+                <div class="glass-card skill-card p-6 animate-fade-in">
+                    <h3>Programming</h3>
+                    <div class="tech-pills">
+                        <div class="tech-pill">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" class="tech-icon" alt="Java">
+                            <span>Java</span>
+                        </div>
+                        <div class="tech-pill">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="tech-icon" alt="Python">
+                            <span>Python</span>
+                        </div>
+                        <div class="tech-pill">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" class="tech-icon" alt="Pandas">
+                            <span>Pandas</span>
+                        </div>
+                        <div class="tech-pill">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" class="tech-icon" alt="NumPy">
+                            <span>NumPy</span>
+                        </div>
+                        <div class="tech-pill">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg" class="tech-icon" alt="Matplotlib" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Created_with_Matplotlib-logo.svg/128px-Created_with_Matplotlib-logo.svg.png'">
+                            <span>Matplotlib</span>
+                        </div>
+                        <div class="tech-pill">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Scikit_learn_logo_small.svg/120px-Scikit_learn_logo_small.svg.png" class="tech-icon" alt="Scikit-learn">
+                            <span>Scikit-learn</span>
+                        </div>
+                        <div class="tech-pill">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" class="tech-icon" alt="Flask" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Flask_logo.svg/120px-Flask_logo.svg.png'">
+                            <span>Flask</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card skill-card p-6 animate-fade-in" style="animation-delay: 100ms;">
+                    <h3>Web & App Development</h3>
+                    <div class="tech-pills">
+                        <div class="tech-pill">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" class="tech-icon" alt="Flutter">
+                            <span>Flutter</span>
+                        </div>
+                        <div class="tech-pill">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" class="tech-icon" alt="PHP">
+                            <span>PHP</span>
+                        </div>
+                        <div class="tech-pill">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="tech-icon" alt="HTML">
+                            <span>HTML</span>
+                        </div>
+                        <div class="tech-pill">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" class="tech-icon" alt="CSS">
+                            <span>CSS</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card skill-card p-6 animate-fade-in" style="animation-delay: 200ms;">
+                    <h3>Development Tools</h3>
+                    <div class="tech-pills">
+                        <div class="tech-pill">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg" class="tech-icon" alt="Android Studio">
+                            <span>Android Studio</span>
+                        </div>
+                        <div class="tech-pill">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" class="tech-icon" alt="GitHub">
+                            <span>GitHub</span>
+                        </div>
+                        <div class="tech-pill">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" class="tech-icon" alt="VS Code">
+                            <span>VS Code</span>
+                        </div>
+                        <div class="tech-pill">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" class="tech-icon" alt="Figma">
+                            <span>Figma</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card skill-card p-6 animate-fade-in" style="animation-delay: 300ms;">
+                    <h3>Databases</h3>
+                    <div class="tech-pills">
+                        <div class="tech-pill">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" class="tech-icon" alt="SQL Server">
+                            <span>SQL Server</span>
+                        </div>
+                        <div class="tech-pill">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" class="tech-icon" alt="PostgreSQL">
+                            <span>PostgreSQL</span>
+                        </div>
+                        <div class="tech-pill">
+                            <img src="https://www.apachefriends.org/images/xampp-logo-ac950edf.svg" class="tech-icon" alt="XAMPP">
+                            <span>XAMPP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section bg-lavender-50">
+        <div class="container mx-auto px-4">
+            <h2 class="section-heading">Projects</h2>
+            <div class="projects-grid mt-8">
+                <div class="glass-card project-card p-6 animate-fade-in">
+                    <div class="project-content">
+                        <h3>Career Paths Application</h3>
+                        <p class="project-description">
+                            Developed an application aimed at guiding students in their post-10th and diploma in engineering educational decisions. The application helps students identify suitable fields, colleges, or schools based on their interests and test scores.
+                        </p>
+                        <div class="mt-4">
+                            <div class="project-tech">
+                                <span class="tech-label">Front-end:</span>
+                                <span class="tech-value">Flutter</span>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-label">Back-end:</span>
+                                <span class="tech-value">PHP</span>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-label">Database:</span>
+                                <span class="tech-value">SQL Server</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card project-card p-6 animate-fade-in" style="animation-delay: 100ms;">
+                    <div class="project-content">
+                        <h3>Natural Disaster Detection System</h3>
+                        <p class="project-description">
+                            Developed an AI-powered real-time disaster detection system that monitors earthquakes, floods, and storms using live USGS, NOAA, and OpenWeatherMap data. Integrated geolocation-based alerts, heatmaps, and emergency assistance features.
+                        </p>
+                        <div class="mt-4">
+                            <div class="project-tech">
+                                <span class="tech-label">Front-end:</span>
+                                <span class="tech-value">React + TypeScript</span>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-label">Back-end:</span>
+                                <span class="tech-value">Express + TypeScript</span>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-label">API:</span>
+                                <span class="tech-value">USGS, NOAA, OpenWeather APIs</span>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-label">Database:</span>
+                                <span class="tech-value">PostgreSQL + Drizzle ORM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card project-card p-6 animate-fade-in" style="animation-delay: 200ms;">
+                    <div class="project-content">
+                        <h3>Disease Prediction Model</h3>
+                        <p class="project-description">
+                            Developed a web application that predicts potential diseases based on user-selected symptoms. The application utilizes machine learning algorithms to assist users in preliminary diagnosis and guide them on whether to seek medical attention.
+                        </p>
+                        <div class="mt-4">
+                            <div class="project-tech">
+                                <span class="tech-label">Front-end:</span>
+                                <span class="tech-value">HTML, CSS, Bootstrap</span>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-label">Back-end:</span>
+                                <span class="tech-value">Flask, Python, Scikit-learn, Pickle</span>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-label">Data:</span>
+                                <span class="tech-value">Excel sheet, Kaggle</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="section">
+        <div class="container mx-auto px-4">
+            <h2 class="section-heading">Achievements</h2>
+            <div class="achievements-grid mt-8">
+                <div class="achievement-card glass-card p-6 animate-fade-in">
+                    <div class="achievement-icon">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <div class="achievement-content">
+                        <h3>Project Expo - 2023 (SSIP)</h3>
+                        <p>Presented Career Paths Application.</p>
+                        <span class="achievement-date">June 2023</span>
+                    </div>
+                </div>
+                <div class="achievement-card glass-card p-6 animate-fade-in" style="animation-delay: 100ms;">
+                    <div class="achievement-icon">
+                        <i class="fa-solid fa-certificate"></i>
+                    </div>
+                    <div class="achievement-content">
+                        <h3>Data Analysis With Python</h3>
+                        <p>Learned Pandas, NumPy, and data visualization.</p>
+                        <span class="achievement-date">March 2025</span>
+                    </div>
+                </div>
+                <div class="achievement-card glass-card p-6 animate-fade-in" style="animation-delay: 200ms;">
+                    <div class="achievement-icon">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <div class="achievement-content">
+                        <h3>Coding: Development & Advanced Engineering Job Simulation</h3>
+                        <p>Hands-on training in software development.</p>
+                        <span class="achievement-date">March 2025</span>
+                    </div>
+                </div>
+                <div class="achievement-card glass-card p-6 animate-fade-in" style="animation-delay: 300ms;">
+                    <div class="achievement-icon">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <div class="achievement-content">
+                        <h3>Walmart USA Advanced Software Engineering Virtual Experience Program on Forage</h3>
+                        <p>Completed virtual experience program.</p>
+                        <span class="achievement-date">April 2025</span>
+                    </div>
+                </div>
+                <div class="achievement-card glass-card p-6 animate-fade-in" style="animation-delay: 400ms;">
+                    <div class="achievement-icon">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <div class="achievement-content">
+                        <h3>HackElevate (Hackathon) - 2025 Winner</h3>
+                        <p>Presented Natural Disaster Detection System: AI-Driven Real-Time Monitoring & Alert System.</p>
+                        <span class="achievement-date">March 2025</span>
+                    </div>
+                </div>
+            </div>
+            <div class="certifications-link mt-8 text-center">
+                <a href="https://drive.google.com/drive/folders/1mtGb3KfJF82PFv2alRhink16J5lWKSY5?usp=drive_link" target="_blank" class="btn btn-primary">
+                    <i class="fa-solid fa-certificate mr-2"></i> View All Certifications
                 </a>
-              </div>
             </div>
-            
-            <div class="project-card glass-card">
-              <div class="project-content">
-                <h3>Natural Disaster Detection System</h3>
-                <p class="project-description">
-                  Developed an AI-powered real-time disaster detection system that monitors earthquakes, floods, and storms using live USGS, NOAA, and OpenWeatherMap data. Integrated geolocation-based alerts, heatmaps, and emergency assistance features.
-                </p>
-                <div class="project-tech">
-                  <span class="tech-label">Frontend:</span>
-                  <span class="tech-value">React + TypeScript</span>
-                </div>
-                <div class="project-tech">
-                  <span class="tech-label">Backend:</span>
-                  <span class="tech-value">Express + TypeScript</span>
-                </div>
-                <div class="project-tech">
-                  <span class="tech-label">API:</span>
-                  <span class="tech-value">USGS, NOAA, OpenWeather APIs</span>
-                </div>
-                <div class="project-tech">
-                  <span class="tech-label">Database:</span>
-                  <span class="tech-value">PostgreSQL + Drizzle ORM</span>
-                </div>
-                <a href="https://github.com/harsh822v" target="_blank" rel="noopener noreferrer" class="project-link">
-                  <i data-lucide="github"></i>
-                </a>
-              </div>
-            </div>
-            
-            <div class="project-card glass-card">
-              <div class="project-content">
-                <h3>Disease Prediction Model</h3>
-                <p class="project-description">
-                  Developed a web application that predicts potential diseases based on user-selected symptoms. The application utilizes machine learning algorithms to assist users in preliminary diagnosis and guide them on whether to seek medical attention.
-                </p>
-                <div class="project-tech">
-                  <span class="tech-label">Frontend:</span>
-                  <span class="tech-value">HTML, CSS, Bootstrap</span>
-                </div>
-                <div class="project-tech">
-                  <span class="tech-label">Backend:</span>
-                  <span class="tech-value">Flask, Python, Scikit-learn, Pickle</span>
-                </div>
-                <div class="project-tech">
-                  <span class="tech-label">Data:</span>
-                  <span class="tech-value">Excel sheet, Kaggle</span>
-                </div>
-                <a href="https://github.com/harsh822v" target="_blank" rel="noopener noreferrer" class="project-link">
-                  <i data-lucide="github"></i>
-                </a>
-              </div>
-            </div>
-          </div>
         </div>
-      </section>
+    </section>
 
-      <!-- Achievements Section -->
-      <section id="achievements" class="achievements section">
-        <div class="container">
-          <h2 class="section-heading">Achievements</h2>
-          
-          <div class="achievements-grid">
-            <div class="achievement-card glass-card">
-              <div class="achievement-icon">
-                <i data-lucide="award"></i>
-              </div>
-              <div class="achievement-content">
-                <h3>Project Expo - 2023 (SSIP)</h3>
-                <p>Presented Career Paths Application</p>
-                <span class="achievement-date">June 2023</span>
-              </div>
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container mx-auto px-4">
+            <h2 class="section-heading">Contact Me</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
+                <div class="glass-card p-6 md:p-8 animate-fade-in">
+                    <h3 class="text-xl font-semibold mb-6">Get In Touch</h3>
+                    
+                    <form id="contact-form" class="space-y-4">
+                        <div class="form-group">
+                            <label for="name" class="block text-sm font-medium mb-1">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your Name" required class="w-full px-4 py-2 rounded">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="block text-sm font-medium mb-1">Email</label>
+                            <input type="email" id="email" name="email" placeholder="your.email@example.com" required class="w-full px-4 py-2 rounded">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject" class="block text-sm font-medium mb-1">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="Subject" required class="w-full px-4 py-2 rounded">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="block text-sm font-medium mb-1">Message</label>
+                            <textarea id="message" name="message" placeholder="Your message here..." rows="5" required class="w-full px-4 py-2 rounded"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary w-full">
+                            <span class="flex items-center justify-center">
+                                <i class="fa-solid fa-paper-plane mr-2"></i>
+                                Send Message
+                            </span>
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="glass-card p-6 md:p-8 flex flex-col justify-between animate-fade-in">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-6">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="contact-icon">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-sm font-medium text-muted">Phone</h4>
+                                    <p>+91 9601026883</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="contact-icon">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-sm font-medium text-muted">Email</h4>
+                                    <p class="break-all">harsh206090307117@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-12">
+                        <h3 class="text-xl font-semibold mb-4">Connect With Me</h3>
+                        <div class="flex space-x-4">
+                            <a href="https://www.linkedin.com/in/harsh-shukla-3230a4325/" target="_blank" rel="noopener noreferrer" class="social-link">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </a>
+                            
+                            <a href="https://github.com/harsh822v" target="_blank" rel="noopener noreferrer" class="social-link">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            
-            <div class="achievement-card glass-card">
-              <div class="achievement-icon">
-                <i data-lucide="award"></i>
-              </div>
-              <div class="achievement-content">
-                <h3>Data Analysis With Python</h3>
-                <p>Learned Pandas, NumPy, and data visualization</p>
-                <span class="achievement-date">March 2025</span>
-              </div>
-            </div>
-            
-            <div class="achievement-card glass-card">
-              <div class="achievement-icon">
-                <i data-lucide="award"></i>
-              </div>
-              <div class="achievement-content">
-                <h3>Coding: Development & Advanced Engineering Job Simulation</h3>
-                <p>Hands-on training in software development</p>
-                <span class="achievement-date">March 2025</span>
-              </div>
-            </div>
-            
-            <div class="achievement-card glass-card">
-              <div class="achievement-icon">
-                <i data-lucide="award"></i>
-              </div>
-              <div class="achievement-content">
-                <h3>Walmart USA Advanced Software Engineering Virtual Experience Program</h3>
-                <p>Completed on Forage platform</p>
-                <span class="achievement-date">April 2025</span>
-              </div>
-            </div>
-            
-            <div class="achievement-card glass-card">
-              <div class="achievement-icon">
-                <i data-lucide="trophy"></i>
-              </div>
-              <div class="achievement-content">
-                <h3>HackElevate(Hackathon) - 2025 Winner</h3>
-                <p>Presented Natural Disaster Detection System: AI-Driven Real-Time Monitoring & Alert System</p>
-                <span class="achievement-date">March 2025</span>
-              </div>
-            </div>
-          </div>
-          
-          <div class="certifications-link">
-            <a href="https://drive.google.com/drive/folders/1mtGb3KfJF82PFv2alRhink16J5lWKSY5?usp=drive_link" target="_blank" rel="noopener noreferrer">
-              <i data-lucide="file-text"></i>
-              All Certifications
-            </a>
-          </div>
         </div>
-      </section>
+    </section>
 
-      <!-- Contact Section -->
-      <section id="contact" class="contact section">
-        <div class="container">
-          <h2 class="section-heading">Contact Me</h2>
-          
-          <div class="contact-grid">
-            <div class="contact-form glass-card">
-              <h3>Get In Touch</h3>
-              
-              <form id="contactForm">
-                <div class="form-group">
-                  <label for="name">Name</label>
-                  <input type="text" id="name" name="name" placeholder="Your Name" required>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container mx-auto px-4">
+            <div class="footer-content">
+                <p class="footer-copyright">&copy; 2023 Harsh Shukla. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
                 </div>
-                
-                <div class="form-group">
-                  <label for="email">Email</label>
-                  <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
-                </div>
-                
-                <div class="form-group">
-                  <label for="subject">Subject</label>
-                  <input type="text" id="subject" name="subject" placeholder="Subject" required>
-                </div>
-                
-                <div class="form-group">
-                  <label for="message">Message</label>
-                  <textarea id="message" name="message" placeholder="Your message here..." rows="5" required></textarea>
-                </div>
-                
-                <button type="submit" class="btn btn-primary btn-block">
-                  <i data-lucide="send"></i>
-                  Send Message
-                </button>
-              </form>
             </div>
-            
-            <div class="contact-info glass-card">
-              <div>
-                <h3>Contact Information</h3>
-                
-                <div class="contact-details">
-                  <div class="contact-detail">
-                    <div class="contact-icon">
-                      <i data-lucide="phone"></i>
-                    </div>
-                    <div class="contact-text">
-                      <h4>Phone</h4>
-                      <p>+91 9601026883</p>
-                    </div>
-                  </div>
-                  
-                  <div class="contact-detail">
-                    <div class="contact-icon">
-                      <i data-lucide="mail"></i>
-                    </div>
-                    <div class="contact-text">
-                      <h4>Email</h4>
-                      <p class="break-all">harsh206090307117@gmail.com</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="social-connect">
-                <h3>Connect With Me</h3>
-                <div class="social-links">
-                  <a
-                    href="https://www.linkedin.com/in/harsh-shukla-3230a4325/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="social-link"
-                    aria-label="LinkedIn"
-                  >
-                    <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"></path>
-                    </svg>
-                  </a>
-                  
-                  <a
-                    href="https://github.com/harsh822v"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="social-link"
-                    aria-label="GitHub"
-                  >
-                    <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"></path>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-      </section>
+    </footer>
 
-      <!-- Footer -->
-      <footer class="footer">
-        <div class="container">
-          <div class="footer-content">
-            <div class="footer-copyright">
-              <p>&copy; 2023 Harsh Shukla. All Rights Reserved.</p>
-            </div>
-            <div class="footer-links">
-              <a href="#home">Home</a>
-              <a href="#about">About</a>
-              <a href="#skills">Skills</a>
-              <a href="#projects">Projects</a>
-              <a href="#contact">Contact</a>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </div>
-    
-    <!-- Toast notification container -->
+    <!-- Toast Container -->
     <div id="toast-container"></div>
-    
-    <!-- JavaScript -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script src="main.js"></script>
-  </body>
+
+    <script src="script.js"></script>
+</body>
 </html>
