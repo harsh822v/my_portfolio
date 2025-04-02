@@ -16,7 +16,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 221.2 83% 53.3%;
+    --primary: 260 67% 63%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -25,7 +25,7 @@
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 221.2 83% 53.3%;
+    --accent: 260 67% 63%;
     --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
@@ -33,9 +33,20 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 221.2 83% 53.3%;
+    --ring: 260 67% 63%;
 
     --radius: 0.5rem;
+
+    --lavender-50: 260 67% 95%;
+    --lavender-100: 260 67% 90%;
+    --lavender-200: 260 67% 85%;
+    --lavender-300: 260 67% 80%;
+    --lavender-400: 260 67% 70%;
+    --lavender-500: 260 67% 63%;
+    --lavender-600: 260 67% 55%;
+    --lavender-700: 260 67% 45%;
+    --lavender-800: 260 67% 35%;
+    --lavender-900: 260 67% 25%;
   }
 
   .dark {
@@ -48,7 +59,7 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 217.2 91.2% 59.8%;
+    --primary: 260 67% 63%;
     --primary-foreground: 222.2 47.4% 11.2%;
 
     --secondary: 217.2 32.6% 17.5%;
@@ -57,7 +68,7 @@
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 217.2 91.2% 59.8%;
+    --accent: 260 67% 63%;
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 62.8% 30.6%;
@@ -65,7 +76,18 @@
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 224.3 76.3% 48%;
+    --ring: 260 67% 63%;
+
+    --lavender-50: 260 20% 15%;
+    --lavender-100: 260 25% 20%;
+    --lavender-200: 260 30% 25%;
+    --lavender-300: 260 35% 30%;
+    --lavender-400: 260 40% 35%;
+    --lavender-500: 260 45% 40%;
+    --lavender-600: 260 50% 45%;
+    --lavender-700: 260 55% 50%;
+    --lavender-800: 260 60% 55%;
+    --lavender-900: 260 65% 60%;
   }
 }
 
@@ -90,7 +112,7 @@
   
   .section-heading::after {
     content: '';
-    @apply absolute bottom-0 left-0 w-1/2 h-1 bg-primary rounded-full;
+    @apply absolute bottom-0 left-0 w-1/2 h-1 bg-[#B794F4] rounded-full;
   }
   
   .glass-card {
@@ -98,7 +120,7 @@
   }
   
   .tech-pill {
-    @apply px-3 py-1 rounded-full text-sm font-medium bg-secondary text-secondary-foreground transition-all hover:bg-primary hover:text-primary-foreground;
+    @apply px-3 py-1 rounded-full text-sm font-medium bg-secondary text-secondary-foreground transition-all hover:bg-[#B794F4] hover:text-white;
   }
   
   .nav-link {
@@ -107,7 +129,7 @@
   
   .nav-link::after {
     content: '';
-    @apply absolute w-0 h-0.5 bg-primary left-0 -bottom-0.5 transition-all duration-300;
+    @apply absolute w-0 h-0.5 bg-[#B794F4] left-0 -bottom-0.5 transition-all duration-300;
   }
   
   .nav-link:hover::after {

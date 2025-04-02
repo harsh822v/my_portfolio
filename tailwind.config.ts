@@ -53,6 +53,18 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				lavender: {
+					'50': 'hsl(var(--lavender-50))',
+					'100': 'hsl(var(--lavender-100))',
+					'200': 'hsl(var(--lavender-200))',
+					'300': 'hsl(var(--lavender-300))',
+					'400': 'hsl(var(--lavender-400))',
+					'500': 'hsl(var(--lavender-500))',
+					'600': 'hsl(var(--lavender-600))',
+					'700': 'hsl(var(--lavender-700))',
+					'800': 'hsl(var(--lavender-800))',
+					'900': 'hsl(var(--lavender-900))',
+				},
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

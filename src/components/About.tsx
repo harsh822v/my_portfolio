@@ -16,27 +16,6 @@ export function About() {
               Passionate about AI/ML, backend development (PHP, SQL Server), and building scalable applications. 
               Seeking an opportunity to apply my technical skills in a dynamic work environment.
             </p>
-            
-            <h3 className="text-xl font-semibold mb-4">Education</h3>
-            <div className="space-y-4">
-              <div>
-                <h4 className="font-medium">Government Engineering College, Dahod (GTU)</h4>
-                <p className="text-sm text-foreground/70">Bachelor of Engineering (B.E.)</p>
-                <p className="text-sm text-foreground/70">SPI: 6.22 | CGPA: 5.84</p>
-              </div>
-              
-              <div>
-                <h4 className="font-medium">C.U. Shah Polytechnic College, Wadhwan (GTU)</h4>
-                <p className="text-sm text-foreground/70">Diploma in Engineering</p>
-                <p className="text-sm text-foreground/70">SPI: 9.77 | CGPA: 8.67</p>
-              </div>
-              
-              <div>
-                <h4 className="font-medium">Pragati School, Surendranagar</h4>
-                <p className="text-sm text-foreground/70">Secondary Education (10th)</p>
-                <p className="text-sm text-foreground/70">Grade: 72.78%</p>
-              </div>
-            </div>
           </div>
           
           <div className="glass-card p-6 flex flex-col justify-between animate-fade-in">
@@ -44,11 +23,11 @@ export function About() {
               <h3 className="text-xl font-semibold mb-4">Contact Information</h3>
               <ul className="space-y-3">
                 <li className="flex items-center">
-                  <Phone className="w-5 h-5 text-primary mr-3" />
+                  <Phone className="w-5 h-5 text-lavender-600 mr-3" />
                   <span>+91 9601026883</span>
                 </li>
                 <li className="flex items-center">
-                  <Mail className="w-5 h-5 text-primary mr-3" />
+                  <Mail className="w-5 h-5 text-lavender-600 mr-3" />
                   <span className="break-all">harsh206090307117@gmail.com</span>
                 </li>
               </ul>
