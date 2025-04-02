@@ -8,22 +8,32 @@ const themeToggleMobile = document.getElementById('theme-toggle-mobile');
 const contactForm = document.getElementById('contact-form');
 const navLinks = document.querySelectorAll('.nav-link');
 const toastContainer = document.getElementById('toast-container');
+const yearElement = document.getElementById('current-year');
 
 // Set current year in footer
-document.querySelector('.footer-copyright').innerHTML = `&copy; ${new Date().getFullYear()} Harsh Shukla. All rights reserved.`;
+yearElement.textContent = new Date().getFullYear();
 
 // Theme toggle functionality
 function initTheme() {
   // Check for saved theme
-  const savedTheme = localStorage.getItem('theme') || 'light';
+  const savedTheme = localStorage.getItem('theme') || 
+                     (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
   
   // Apply saved theme
   if (savedTheme === 'dark') {
     document.documentElement.classList.add('dark');
+    updateThemeIcons('dark');
+  } else {
+    document.documentElement.classList.remove('dark');
+    updateThemeIcons('light');
+  }
+}
+
+function updateThemeIcons(theme) {
+  if (theme === 'dark') {
     themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
     themeToggleMobile.innerHTML = '<i class="fa-solid fa-sun"></i>';
   } else {
-    document.documentElement.classList.remove('dark');
     themeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
     themeToggleMobile.innerHTML = '<i class="fa-solid fa-moon"></i>';
   }
@@ -33,14 +43,15 @@ function toggleTheme() {
   if (document.documentElement.classList.contains('dark')) {
     document.documentElement.classList.remove('dark');
     localStorage.setItem('theme', 'light');
-    themeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
-    themeToggleMobile.innerHTML = '<i class="fa-solid fa-moon"></i>';
+    updateThemeIcons('light');
   } else {
     document.documentElement.classList.add('dark');
     localStorage.setItem('theme', 'dark');
-    themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
-    themeToggleMobile.innerHTML = '<i class="fa-solid fa-sun"></i>';
+    updateThemeIcons('dark');
   }
+  
+  // Show toast notification
+  showToast(`Switched to ${document.documentElement.classList.contains('dark') ? 'dark' : 'light'} mode`);
 }
 
 // Mobile menu functionality
@@ -88,6 +99,9 @@ function handleScroll() {
       });
     }
   });
+  
+  // Check for elements to animate on scroll
+  checkScrollAnimation();
 }
 
 // Toast notification system
@@ -112,7 +126,9 @@ function showToast(message, type = 'success', duration = 5000) {
   closeButton.addEventListener('click', () => {
     toast.style.opacity = '0';
     setTimeout(() => {
-      toastContainer.removeChild(toast);
+      if (toast.parentNode === toastContainer) {
+        toastContainer.removeChild(toast);
+      }
     }, 300);
   });
   
@@ -170,53 +186,64 @@ function handleContactFormSubmit(event) {
   // Send email using mailto
   setTimeout(() => {
     const mailtoLink = `mailto:harsh206090307117@gmail.com?subject=${encodeURIComponent(formProps.subject)}&body=${encodeURIComponent(emailBody)}`;
-    window.open(mailtoLink, '_blank');
+    window.location.href = mailtoLink;
     
     // Reset form
     contactForm.reset();
     submitButton.disabled = false;
     submitButton.innerHTML = originalButtonContent;
     
-    showToast('Message sent successfully! Your email client has been opened.');
+    showToast('Email client opened with your message');
   }, 1500);
 }
 
 // Setup animations for elements as they scroll into view
 function setupScrollAnimations() {
-  // Get all elements that should be animated
-  const animatedElements = document.querySelectorAll('.animate-fade-in');
+  // No need to set up anything, the checking will be done in checkScrollAnimation function
+}
+
+function checkScrollAnimation() {
+  const animatedElements = document.querySelectorAll('.animate-on-scroll:not(.animated)');
   
-  // IntersectionObserver configuration
-  const observerOptions = {
-    root: null, // Use viewport as root
-    threshold: 0.1, // Trigger when 10% of element is visible
-    rootMargin: '0px 0px -50px 0px' // Adjust trigger point (negative value means "before element comes into view")
-  };
-  
-  // Create observer
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      // If element is in view
-      if (entry.isIntersecting) {
-        // Add animation class
-        entry.target.style.animationPlayState = 'running';
-        // Stop observing once animation is triggered
-        observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
-  
-  // Start observing elements
   animatedElements.forEach(element => {
-    element.style.animationPlayState = 'paused';
-    observer.observe(element);
+    const elementPosition = element.getBoundingClientRect();
+    
+    // If element is in viewport
+    if (elementPosition.top < window.innerHeight * 0.85) {
+      element.classList.add('animated');
+    }
   });
+}
+
+// Typewriter animation for subtitle
+function typeWriter() {
+  const text = "Aspiring Software Developer";
+  const subtitle = document.querySelector('.typewriter-text');
+  let i = 0;
+  
+  function type() {
+    if (i < text.length) {
+      subtitle.textContent += text.charAt(i);
+      i++;
+      setTimeout(type, 100);
+    } else {
+      // Add blinking cursor effect after typing is complete
+      subtitle.classList.add('typewriter-done');
+    }
+  }
+  
+  setTimeout(() => {
+    type();
+  }, 500);
 }
 
 // Initialize everything when DOM content is loaded
 document.addEventListener('DOMContentLoaded', () => {
   // Initialize theme
   initTheme();
+  
+  // Start typewriter animation
+  typeWriter();
   
   // Add event listeners
   themeToggle.addEventListener('click', toggleTheme);
@@ -228,7 +255,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Setup scroll animations
   setupScrollAnimations();
   
-  // Initial header state
+  // Initial header state and animations check
   handleScroll();
   
   // Setup smooth scrolling for anchor links
@@ -240,6 +267,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const targetElement = document.querySelector(targetId);
       
       if (targetElement) {
+        // Close mobile menu if open
+        if (mobileMenu.classList.contains('active')) {
+          closeMobileMenu();
+        }
+        
         window.scrollTo({
           top: targetElement.offsetTop,
           behavior: 'smooth'
@@ -247,4 +279,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // Check for animated elements on initial load
+  checkScrollAnimation();
 });

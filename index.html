@@ -8,24 +8,27 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="Portfolio of Harsh Shukla, an aspiring software developer with expertise in Java, Python, and Data Science libraries.">
 </head>
-<body class="bg-background text-foreground">
+<body>
     <!-- Header -->
     <header id="header" class="fixed top-0 z-50 w-full transition-all duration-300">
         <div class="container mx-auto px-4 h-16 flex items-center justify-between">
             <div class="flex items-center">
-                <a href="#home" class="text-xl md:text-2xl font-bold text-primary">
-                    Harsh<span class="text-foreground">Shukla</span>
+                <a href="#home" class="logo">
+                    Harsh<span>Shukla</span>
                 </a>
             </div>
             
             <!-- Desktop Navigation -->
             <nav class="hidden md:flex items-center space-x-1">
-                <ul class="flex space-x-1">
+                <ul class="nav-links">
                     <li><a href="#home" class="nav-link active">Home</a></li>
                     <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#education" class="nav-link">Education</a></li>
                     <li><a href="#skills" class="nav-link">Skills</a></li>
                     <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#achievements" class="nav-link">Achievements</a></li>
                     <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
                 <div class="ml-4">
@@ -49,11 +52,13 @@
         <!-- Mobile Navigation Menu -->
         <div id="mobile-menu" class="mobile-menu">
             <div class="flex flex-col items-center justify-center h-full">
-                <ul class="flex flex-col items-center space-y-6">
+                <ul class="mobile-nav-links">
                     <li><a href="#home" class="text-xl font-medium" onclick="closeMobileMenu()">Home</a></li>
                     <li><a href="#about" class="text-xl font-medium" onclick="closeMobileMenu()">About</a></li>
+                    <li><a href="#education" class="text-xl font-medium" onclick="closeMobileMenu()">Education</a></li>
                     <li><a href="#skills" class="text-xl font-medium" onclick="closeMobileMenu()">Skills</a></li>
                     <li><a href="#projects" class="text-xl font-medium" onclick="closeMobileMenu()">Projects</a></li>
+                    <li><a href="#achievements" class="text-xl font-medium" onclick="closeMobileMenu()">Achievements</a></li>
                     <li><a href="#contact" class="text-xl font-medium" onclick="closeMobileMenu()">Contact</a></li>
                 </ul>
             </div>
@@ -65,12 +70,14 @@
         <div class="hero-gradient"></div>
         <div class="container mx-auto px-4">
             <div class="hero-content">
-                <h1 class="hero-title">Shukla Harsh Pravinbhai</h1>
-                <p class="hero-subtitle typewriter-text">Aspiring Software Developer</p>
-                <p class="hero-description">With expertise in Java, Python, and Data Science libraries. Passionate about AI/ML, backend development, and building scalable applications.</p>
+                <h1 class="hero-title animate-fade-in">Shukla Harsh Pravinbhai</h1>
+                <div class="hero-subtitle-container">
+                    <p class="hero-subtitle typewriter-text"></p>
+                </div>
+                <p class="hero-description animate-fade-in">With expertise in Java, Python, and Data Science libraries. Passionate about AI/ML, backend development, and building scalable applications.</p>
                 <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">Contact Me</a>
-                    <a href="#about" class="btn btn-outline">Learn More</a>
+                    <a href="#contact" class="btn btn-primary animate-fade-in" style="animation-delay: 0.2s;">Contact Me</a>
+                    <a href="#about" class="btn btn-outline animate-fade-in" style="animation-delay: 0.4s;">Learn More</a>
                 </div>
             </div>
         </div>
@@ -83,7 +90,7 @@
     <section id="about" class="section">
         <div class="container mx-auto px-4">
             <h2 class="section-heading">About Me</h2>
-            <div class="glass-card p-6 md:p-8 mt-8 animate-fade-in">
+            <div class="glass-card p-6 md:p-8 mt-8 animate-on-scroll">
                 <div class="mb-6">
                     <div class="mb-6">
                         <p class="mb-4">
@@ -134,17 +141,17 @@
         <div class="container mx-auto px-4">
             <h2 class="section-heading">Education</h2>
             <div class="education-grid mt-8">
-                <div class="glass-card p-6 animate-fade-in">
+                <div class="glass-card p-6 animate-on-scroll">
                     <h3>Bachelor of Engineering (B.E.)</h3>
                     <p class="institution">Government Engineering College, Dahod (GTU)</p>
                     <p class="grades">SPI: 6.22 | CGPA: 5.84</p>
                 </div>
-                <div class="glass-card p-6 animate-fade-in" style="animation-delay: 100ms;">
+                <div class="glass-card p-6 animate-on-scroll" style="animation-delay: 100ms;">
                     <h3>Diploma in Engineering</h3>
                     <p class="institution">C.U. Shah Polytechnic College, Wadhwan (GTU)</p>
                     <p class="grades">SPI: 9.77 | CGPA: 8.67</p>
                 </div>
-                <div class="glass-card p-6 animate-fade-in" style="animation-delay: 200ms;">
+                <div class="glass-card p-6 animate-on-scroll" style="animation-delay: 200ms;">
                     <h3>Secondary Education (10th)</h3>
                     <p class="institution">Pragati School, Surendranagar</p>
                     <p class="grades">Grade: 72.78%</p>
@@ -158,7 +165,7 @@
         <div class="container mx-auto px-4">
             <h2 class="section-heading">Skills</h2>
             <div class="skills-grid mt-8">
-                <div class="glass-card skill-card p-6 animate-fade-in">
+                <div class="glass-card skill-card p-6 animate-on-scroll">
                     <h3>Programming</h3>
                     <div class="tech-pills">
                         <div class="tech-pill">
@@ -178,7 +185,7 @@
                             <span>NumPy</span>
                         </div>
                         <div class="tech-pill">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg" class="tech-icon" alt="Matplotlib" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Created_with_Matplotlib-logo.svg/128px-Created_with_Matplotlib-logo.svg.png'">
+                            <img src="https://matplotlib.org/stable/_static/logo2.svg" class="tech-icon" alt="Matplotlib" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Created_with_Matplotlib-logo.svg/128px-Created_with_Matplotlib-logo.svg.png'">
                             <span>Matplotlib</span>
                         </div>
                         <div class="tech-pill">
@@ -186,12 +193,12 @@
                             <span>Scikit-learn</span>
                         </div>
                         <div class="tech-pill">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" class="tech-icon" alt="Flask" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Flask_logo.svg/120px-Flask_logo.svg.png'">
+                            <img src="https://flask.palletsprojects.com/en/2.3.x/_static/flask-icon.png" class="tech-icon" alt="Flask" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Flask_logo.svg/120px-Flask_logo.svg.png'">
                             <span>Flask</span>
                         </div>
                     </div>
                 </div>
-                <div class="glass-card skill-card p-6 animate-fade-in" style="animation-delay: 100ms;">
+                <div class="glass-card skill-card p-6 animate-on-scroll" style="animation-delay: 100ms;">
                     <h3>Web & App Development</h3>
                     <div class="tech-pills">
                         <div class="tech-pill">
@@ -212,7 +219,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="glass-card skill-card p-6 animate-fade-in" style="animation-delay: 200ms;">
+                <div class="glass-card skill-card p-6 animate-on-scroll" style="animation-delay: 200ms;">
                     <h3>Development Tools</h3>
                     <div class="tech-pills">
                         <div class="tech-pill">
@@ -233,7 +240,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="glass-card skill-card p-6 animate-fade-in" style="animation-delay: 300ms;">
+                <div class="glass-card skill-card p-6 animate-on-scroll" style="animation-delay: 300ms;">
                     <h3>Databases</h3>
                     <div class="tech-pills">
                         <div class="tech-pill">
@@ -259,7 +266,7 @@
         <div class="container mx-auto px-4">
             <h2 class="section-heading">Projects</h2>
             <div class="projects-grid mt-8">
-                <div class="glass-card project-card p-6 animate-fade-in">
+                <div class="glass-card project-card p-6 animate-on-scroll">
                     <div class="project-content">
                         <h3>Career Paths Application</h3>
                         <p class="project-description">
@@ -281,7 +288,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="glass-card project-card p-6 animate-fade-in" style="animation-delay: 100ms;">
+                <div class="glass-card project-card p-6 animate-on-scroll" style="animation-delay: 100ms;">
                     <div class="project-content">
                         <h3>Natural Disaster Detection System</h3>
                         <p class="project-description">
@@ -307,7 +314,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="glass-card project-card p-6 animate-fade-in" style="animation-delay: 200ms;">
+                <div class="glass-card project-card p-6 animate-on-scroll" style="animation-delay: 200ms;">
                     <div class="project-content">
                         <h3>Disease Prediction Model</h3>
                         <p class="project-description">
@@ -338,7 +345,7 @@
         <div class="container mx-auto px-4">
             <h2 class="section-heading">Achievements</h2>
             <div class="achievements-grid mt-8">
-                <div class="achievement-card glass-card p-6 animate-fade-in">
+                <div class="achievement-card glass-card p-6 animate-on-scroll">
                     <div class="achievement-icon">
                         <i class="fa-solid fa-trophy"></i>
                     </div>
@@ -348,7 +355,7 @@
                         <span class="achievement-date">June 2023</span>
                     </div>
                 </div>
-                <div class="achievement-card glass-card p-6 animate-fade-in" style="animation-delay: 100ms;">
+                <div class="achievement-card glass-card p-6 animate-on-scroll" style="animation-delay: 100ms;">
                     <div class="achievement-icon">
                         <i class="fa-solid fa-certificate"></i>
                     </div>
@@ -358,7 +365,7 @@
                         <span class="achievement-date">March 2025</span>
                     </div>
                 </div>
-                <div class="achievement-card glass-card p-6 animate-fade-in" style="animation-delay: 200ms;">
+                <div class="achievement-card glass-card p-6 animate-on-scroll" style="animation-delay: 200ms;">
                     <div class="achievement-icon">
                         <i class="fa-solid fa-code"></i>
                     </div>
@@ -368,7 +375,7 @@
                         <span class="achievement-date">March 2025</span>
                     </div>
                 </div>
-                <div class="achievement-card glass-card p-6 animate-fade-in" style="animation-delay: 300ms;">
+                <div class="achievement-card glass-card p-6 animate-on-scroll" style="animation-delay: 300ms;">
                     <div class="achievement-icon">
                         <i class="fa-solid fa-briefcase"></i>
                     </div>
@@ -378,7 +385,7 @@
                         <span class="achievement-date">April 2025</span>
                     </div>
                 </div>
-                <div class="achievement-card glass-card p-6 animate-fade-in" style="animation-delay: 400ms;">
+                <div class="achievement-card glass-card p-6 animate-on-scroll" style="animation-delay: 400ms;">
                     <div class="achievement-icon">
                         <i class="fa-solid fa-award"></i>
                     </div>
@@ -402,7 +409,7 @@
         <div class="container mx-auto px-4">
             <h2 class="section-heading">Contact Me</h2>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
-                <div class="glass-card p-6 md:p-8 animate-fade-in">
+                <div class="glass-card p-6 md:p-8 animate-on-scroll">
                     <h3 class="text-xl font-semibold mb-6">Get In Touch</h3>
                     
                     <form id="contact-form" class="space-y-4">
@@ -435,7 +442,7 @@
                     </form>
                 </div>
                 
-                <div class="glass-card p-6 md:p-8 flex flex-col justify-between animate-fade-in">
+                <div class="glass-card p-6 md:p-8 flex flex-col justify-between animate-on-scroll">
                     <div>
                         <h3 class="text-xl font-semibold mb-6">Contact Information</h3>
                         
@@ -472,6 +479,10 @@
                             <a href="https://github.com/harsh822v" target="_blank" rel="noopener noreferrer" class="social-link">
                                 <i class="fa-brands fa-github"></i>
                             </a>
+                            
+                            <a href="mailto:harsh206090307117@gmail.com" class="social-link">
+                                <i class="fa-solid fa-envelope"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -483,12 +494,14 @@
     <footer class="footer">
         <div class="container mx-auto px-4">
             <div class="footer-content">
-                <p class="footer-copyright">&copy; 2023 Harsh Shukla. All rights reserved.</p>
+                <p class="footer-copyright">&copy; <span id="current-year"></span> Harsh Shukla. All rights reserved.</p>
                 <div class="footer-links">
                     <a href="#home">Home</a>
                     <a href="#about">About</a>
+                    <a href="#education">Education</a>
                     <a href="#skills">Skills</a>
                     <a href="#projects">Projects</a>
+                    <a href="#achievements">Achievements</a>
                     <a href="#contact">Contact</a>
                 </div>
             </div>

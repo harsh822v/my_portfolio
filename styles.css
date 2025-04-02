@@ -38,7 +38,7 @@
 .dark {
   --background: hsl(222.2, 84%, 4.9%);
   --foreground: hsl(210, 40%, 98%);
-  --card: hsl(222.2, 84%, 4.9%);
+  --card: hsl(222.2, 18%, 12%);
   --card-foreground: hsl(210, 40%, 98%);
   --popover: hsl(222.2, 84%, 4.9%);
   --popover-foreground: hsl(210, 40%, 98%);
@@ -139,6 +139,29 @@ a:hover {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+.logo {
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  transition: transform 0.3s;
+  display: block;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.logo span {
+  color: var(--foreground);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 0.25rem;
+}
+
 .nav-link {
   position: relative;
   padding: 0.5rem 0.75rem;
@@ -181,6 +204,7 @@ a:hover {
 
 .theme-toggle:hover {
   background-color: var(--muted);
+  transform: rotate(30deg);
 }
 
 .mobile-menu-button {
@@ -222,6 +246,25 @@ a:hover {
   transform: translateX(0);
 }
 
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.mobile-nav-links a {
+  position: relative;
+  color: var(--foreground);
+  transition: color 0.3s, transform 0.3s;
+}
+
+.mobile-nav-links a:hover {
+  color: var(--primary);
+  transform: translateY(-3px);
+}
+
 /* Buttons */
 .btn {
   display: inline-flex;
@@ -246,6 +289,8 @@ a:hover {
 .btn-primary:hover {
   background-color: var(--lavender-600);
   color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .btn-outline {
@@ -257,6 +302,8 @@ a:hover {
 .btn-outline:hover {
   background-color: var(--secondary);
   color: var(--foreground);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .btn-block {
@@ -284,7 +331,6 @@ a:hover {
   text-align: center;
   max-width: 800px;
   margin: 0 auto;
-  animation: fadeIn 1s ease-out;
 }
 
 .hero-title {
@@ -297,9 +343,13 @@ a:hover {
   color: transparent;
 }
 
+.hero-subtitle-container {
+  margin-bottom: 1.5rem;
+  min-height: 2.5rem;
+}
+
 .hero-subtitle {
   font-size: 1.5rem;
-  margin-bottom: 1.5rem;
   color: var(--foreground);
   opacity: 0.8;
   position: relative;
@@ -312,8 +362,7 @@ a:hover {
   border-right: 0.15em solid var(--primary);
   white-space: nowrap;
   margin: 0 auto;
-  letter-spacing: 0.15em;
-  animation: typing 3.5s steps(30, end), blink-caret 0.75s step-end infinite;
+  letter-spacing: 0.05em;
 }
 
 .hero-description {
@@ -392,7 +441,7 @@ a:hover {
   padding: 0.5rem 1rem;
   border-radius: var(--radius);
   border: 1px solid var(--border);
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.3s;
   color: var(--foreground);
 }
 
@@ -404,6 +453,7 @@ a:hover {
 
 .profile-link:hover {
   background-color: var(--secondary);
+  transform: translateY(-3px);
 }
 
 /* Education Section */
@@ -471,8 +521,8 @@ a:hover {
 }
 
 .tech-icon {
-  width: 36px;
-  height: 36px;
+  width: 45px;
+  height: 45px;
   margin-right: 0.5rem;
   object-fit: contain;
   transition: transform 0.3s;
@@ -581,13 +631,14 @@ a:hover {
   background-color: var(--background);
   color: var(--foreground);
   font-family: inherit;
-  transition: border-color 0.3s;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
   border-color: var(--lavender-500);
+  box-shadow: 0 0 0 2px rgba(186, 169, 255, 0.2);
 }
 
 .contact-icon {
@@ -651,6 +702,7 @@ a:hover {
 .footer-links {
   display: flex;
   gap: 1.5rem;
+  flex-wrap: wrap;
 }
 
 .footer-links a {
@@ -772,20 +824,48 @@ a:hover {
   50% { border-color: var(--primary) }
 }
 
-@keyframes fade-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
 }
 
-.animate-fade-in {
-  animation: fade-in-up 0.6s ease-out forwards;
+.animate-on-scroll {
   opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s, transform 0.6s;
+}
+
+.animate-on-scroll.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Utility classes */
+.mr-2 {
+  margin-right: 0.5rem;
+}
+
+.ml-4 {
+  margin-left: 1rem;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.w-full {
+  width: 100%;
 }
 
 /* Media Queries */
@@ -807,6 +887,10 @@ a:hover {
     text-align: center;
   }
   
+  .footer-links {
+    justify-content: center;
+  }
+  
   .tech-icon {
     width: 32px;
     height: 32px;
@@ -814,6 +898,42 @@ a:hover {
   
   .projects-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .hidden {
+    display: none;
+  }
+
+  .md\:flex {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:flex {
+    display: flex;
+  }
+  
+  .md\:p-8 {
+    padding: 2rem;
+  }
+  
+  .md\:col-span-2 {
+    grid-column: span 2 / span 2;
+  }
+  
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  
+  .lg\:col-span-2 {
+    grid-column: span 2 / span 2;
   }
 }
 
@@ -831,8 +951,8 @@ a:hover {
   }
   
   .tech-icon {
-    width: 28px;
-    height: 28px;
+    width: 38px;
+    height: 38px;
   }
   
   .education-grid,
@@ -841,19 +961,36 @@ a:hover {
     grid-template-columns: 1fr;
   }
   
-  .btn {
-    width: 100%;
-    margin-bottom: 0.5rem;
-  }
-  
   .hero-buttons {
     flex-direction: column;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 16px; /* Prevent zoom on mobile devices */
   }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .tech-icon {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
   }
+}
+
+/* Helpers for responsive design */
+.space-y-3 > * + * {
+  margin-top: 0.75rem;
+}
+
+.space-y-4 > * + * {
+  margin-top: 1rem;
+}
+
+.space-y-6 > * + * {
+  margin-top: 1.5rem;
+}
+
+.space-x-4 > * + * {
+  margin-left: 1rem;
 }
