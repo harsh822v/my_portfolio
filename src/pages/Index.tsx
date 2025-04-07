@@ -24,24 +24,38 @@ const Index = () => {
         
         if (elementTop < windowHeight - elementVisible) {
           element.classList.add('active');
+        } else {
+          // Optional: uncomment to re-trigger animations when scrolling back up
+          // element.classList.remove('active');
         }
       });
     };
     
-    // Add event listener for scroll
-    window.addEventListener('scroll', handleScrollAnimation);
+    // Add event listener for scroll with a debounce effect
+    let scrollTimer: number | null = null;
+    const handleScroll = () => {
+      if (scrollTimer !== null) {
+        clearTimeout(scrollTimer);
+      }
+      scrollTimer = window.setTimeout(() => {
+        handleScrollAnimation();
+      }, 10);
+    };
+    
+    window.addEventListener('scroll', handleScroll);
     
     // Run once on load to animate elements already in viewport
     handleScrollAnimation();
     
     // Cleanup
     return () => {
-      window.removeEventListener('scroll', handleScrollAnimation);
+      window.removeEventListener('scroll', handleScroll);
+      if (scrollTimer !== null) clearTimeout(scrollTimer);
     };
   }, []);
   
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden">
       <Navbar />
       <Hero />
       <About />

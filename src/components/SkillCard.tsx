@@ -8,8 +8,8 @@ export interface TechPillProps {
 
 export const TechPill: React.FC<TechPillProps> = ({ name, icon }) => {
   return (
-    <div className="tech-pill flex items-center space-x-2 hover:scale-105 transition-all">
-      <img src={icon} alt={name} className="w-6 h-6" />
+    <div className="tech-pill flex items-center space-x-2 transition-all duration-300 hover:scale-110">
+      <img src={icon} alt={name} className="w-6 h-6 transition-all duration-300 hover:w-7 hover:h-7" />
       <span>{name}</span>
     </div>
   );

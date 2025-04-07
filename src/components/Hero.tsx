@@ -5,8 +5,6 @@ import { useEffect } from 'react';
 
 export function Hero() {
   useEffect(() => {
-    // Typing animation is handled via CSS
-    
     // Initialize scroll reveal animations
     const initScrollReveal = () => {
       const revealElements = document.querySelectorAll('.reveal');
@@ -47,7 +45,7 @@ export function Hero() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 bg-gradient-to-r from-purple-500 to-lavender-500 bg-clip-text text-transparent reveal fade-bottom">
             Shukla Harsh Pravinbhai
           </h1>
-          <h2 className="text-xl md:text-2xl mb-6 text-foreground/80 typing-animation">
+          <h2 className="text-xl md:text-2xl mb-6 text-foreground/80 continuous-typing">
             Aspiring Software Developer
           </h2>
           <p className="text-lg text-foreground/70 mb-8 reveal fade-bottom">

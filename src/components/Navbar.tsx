@@ -54,7 +54,7 @@ export function Navbar() {
     }`}>
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex items-center">
-          <a href="#home" className="text-xl md:text-2xl font-bold text-primary">
+          <a href="#home" className="text-xl md:text-2xl font-bold text-primary hover:scale-105 transition-transform">
             Harsh<span className="text-foreground">Shukla</span>
           </a>
         </div>
@@ -66,7 +66,11 @@ export function Navbar() {
               <li key={link.name}>
                 <a 
                   href={link.href}
-                  className={`nav-link ${activeSection === link.href.substring(1) ? 'active' : ''}`}
+                  className={`px-3 py-2 rounded-md transition-all duration-300 ${
+                    activeSection === link.href.substring(1) 
+                      ? 'bg-lavender-500/20 text-foreground font-medium' 
+                      : 'text-foreground/70 hover:text-foreground hover:bg-lavender-500/10'
+                  }`}
                 >
                   {link.name}
                 </a>
@@ -103,7 +107,11 @@ export function Navbar() {
               <li key={link.name}>
                 <a 
                   href={link.href}
-                  className="text-xl font-medium"
+                  className={`text-xl font-medium transition-all duration-300 ${
+                    activeSection === link.href.substring(1)
+                      ? 'text-lavender-500' 
+                      : 'text-foreground/70 hover:text-lavender-500'
+                  }`}
                   onClick={closeMobileMenu}
                 >
                   {link.name}
