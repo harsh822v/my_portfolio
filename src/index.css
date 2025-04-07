@@ -116,11 +116,11 @@
   }
   
   .glass-card {
-    @apply bg-background/40 backdrop-blur-sm border border-border rounded-xl shadow-lg;
+    @apply bg-background/40 backdrop-blur-sm border border-border rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl;
   }
   
   .tech-pill {
-    @apply px-3 py-1 rounded-full text-sm font-medium bg-secondary text-secondary-foreground transition-all hover:bg-[#B794F4] hover:text-white;
+    @apply px-3 py-1 rounded-full text-sm font-medium bg-secondary text-secondary-foreground transition-all hover:bg-[#B794F4] hover:text-white transform hover:scale-105;
   }
   
   .nav-link {
@@ -139,4 +139,87 @@
   .nav-link.active::after {
     @apply w-full;
   }
+}
+
+/* Custom Animations */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #B794F4 }
+}
+
+.typing-animation {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #B794F4;
+  animation: 
+    typing 3s steps(40) 1s forwards,
+    blink-caret 0.75s step-end infinite;
+}
+
+/* Scroll reveal animations */
+.reveal {
+  position: relative;
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+}
+
+.reveal.fade-bottom {
+  transform: translateY(50px);
+}
+
+.reveal.fade-bottom.active {
+  transform: translateY(0);
+}
+
+.reveal.fade-left {
+  transform: translateX(-50px);
+}
+
+.reveal.fade-left.active {
+  transform: translateX(0);
+}
+
+.reveal.fade-right {
+  transform: translateX(50px);
+}
+
+.reveal.fade-right.active {
+  transform: translateX(0);
+}
+
+/* Enhance skill cards hover */
+.skill-card-hover {
+  transition: all 0.3s ease;
+}
+
+.skill-card-hover:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Pulsing animation for buttons */
+@keyframes pulse-light {
+  0% {
+    box-shadow: 0 0 0 0 rgba(183, 148, 244, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(183, 148, 244, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(183, 148, 244, 0);
+  }
+}
+
+.btn-pulse-effect:hover {
+  animation: pulse-light 2s infinite;
 }

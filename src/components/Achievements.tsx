@@ -35,22 +35,23 @@ export function Achievements() {
   return (
     <section id="achievements" className="py-20 px-4 bg-secondary/30">
       <div className="container mx-auto">
-        <h2 className="section-heading">Achievements & Certifications</h2>
+        <h2 className="section-heading reveal fade-bottom">Achievements & Certifications</h2>
         
-        <div className="mt-12 glass-card p-8">
+        <div className="mt-12 glass-card p-8 reveal fade-bottom">
           <div className="space-y-2">
             {achievements.map((achievement, index) => (
-              <AchievementCard 
-                key={index}
-                title={achievement.title}
-                description={achievement.description}
-                date={achievement.date}
-              />
+              <div key={index} className="reveal fade-left" style={{ transitionDelay: `${index * 0.1}s` }}>
+                <AchievementCard 
+                  title={achievement.title}
+                  description={achievement.description}
+                  date={achievement.date}
+                />
+              </div>
             ))}
           </div>
           
-          <div className="mt-8">
-            <Button asChild>
+          <div className="mt-8 reveal fade-bottom" style={{ transitionDelay: '0.5s' }}>
+            <Button asChild className="btn-pulse-effect">
               <a 
                 href="https://drive.google.com/drive/folders/1mtGb3KfJF82PFv2alRhink16J5lWKSY5?usp=drive_link" 
                 target="_blank" 
