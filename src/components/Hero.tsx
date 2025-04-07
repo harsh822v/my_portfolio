@@ -1,5 +1,5 @@
 
-import { ArrowDown } from 'lucide-react';
+import { ArrowDown, Brain, Cpu, Database, Code, Server } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useEffect } from 'react';
 
@@ -36,16 +36,33 @@ export function Hero() {
   return (
     <section 
       id="home" 
-      className="min-h-screen flex items-center justify-center py-20 px-4 relative"
+      className="min-h-screen flex items-center justify-center py-20 px-4 relative overflow-hidden"
     >
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(186,169,255,0.3),rgba(255,255,255,0))]"></div>
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(121,80,255,0.3),rgba(255,255,255,0))]"></div>
       
-      <div className="container flex flex-col items-center justify-center gap-12 animate-fade-in">
+      {/* AI/ML themed floating elements */}
+      <div className="absolute inset-0 -z-5 overflow-hidden">
+        <div className="tech-floating tech-icon-1"><Code className="w-8 h-8 text-lavender-600/30" /></div>
+        <div className="tech-floating tech-icon-2"><Database className="w-10 h-10 text-lavender-600/40" /></div>
+        <div className="tech-floating tech-icon-3"><Cpu className="w-12 h-12 text-lavender-600/30" /></div>
+        <div className="tech-floating tech-icon-4"><Server className="w-9 h-9 text-lavender-600/40" /></div>
+        <div className="tech-floating tech-icon-5"><Brain className="w-14 h-14 text-lavender-600/30" /></div>
+      </div>
+
+      <div className="container flex flex-col items-center justify-center gap-12 animate-fade-in relative z-10">
         <div className="max-w-2xl text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 bg-gradient-to-r from-purple-500 to-lavender-500 bg-clip-text text-transparent reveal fade-bottom">
-            Shukla Harsh Pravinbhai
-          </h1>
-          <h2 className="text-xl md:text-2xl mb-6 text-foreground/80 continuous-typing">
+          <div className="relative inline-block">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 bg-gradient-to-r from-lavender-600 to-primary bg-clip-text text-transparent reveal fade-bottom relative">
+              <span className="name-icon left-icon absolute -left-12 top-1/2 transform -translate-y-1/2 opacity-70">
+                <Brain className="w-8 h-8 md:w-10 md:h-10" />
+              </span>
+              Shukla Harsh Pravinbhai
+              <span className="name-icon right-icon absolute -right-12 top-1/2 transform -translate-y-1/2 opacity-70">
+                <Cpu className="w-8 h-8 md:w-10 md:h-10" />
+              </span>
+            </h1>
+          </div>
+          <h2 className="text-xl md:text-2xl mb-6 text-foreground/80 ai-typing-effect">
             Aspiring Software Developer
           </h2>
           <p className="text-lg text-foreground/70 mb-8 reveal fade-bottom">
@@ -53,10 +70,10 @@ export function Hero() {
             backend development, and building scalable applications.
           </p>
           <div className="flex flex-wrap gap-4 justify-center reveal fade-bottom">
-            <Button asChild className="rounded-full btn-pulse-effect">
+            <Button asChild className="rounded-full btn-pulse-effect bg-gradient-to-r from-lavender-600 to-lavender-500 hover:from-lavender-700 hover:to-lavender-600">
               <a href="#contact">Contact Me</a>
             </Button>
-            <Button asChild variant="outline" className="rounded-full hover:shadow-md">
+            <Button asChild variant="outline" className="rounded-full hover:shadow-md border-lavender-500">
               <a href="#projects">View Projects</a>
             </Button>
           </div>

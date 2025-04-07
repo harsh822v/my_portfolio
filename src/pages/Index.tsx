@@ -29,6 +29,17 @@ const Index = () => {
           // element.classList.remove('active');
         }
       });
+      
+      // Animate AI-themed elements
+      const aiElements = document.querySelectorAll('.ai-animate');
+      aiElements.forEach((element) => {
+        const windowHeight = window.innerHeight;
+        const elementTop = element.getBoundingClientRect().top;
+        
+        if (elementTop < windowHeight - 100) {
+          element.classList.add('ai-active');
+        }
+      });
     };
     
     // Add event listener for scroll with a debounce effect
@@ -55,7 +66,7 @@ const Index = () => {
   }, []);
   
   return (
-    <div className="min-h-screen overflow-x-hidden">
+    <div className="min-h-screen overflow-x-hidden ai-theme-bg">
       <Navbar />
       <Hero />
       <About />
