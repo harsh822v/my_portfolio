@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap');
 
 @tailwind base;
@@ -121,8 +122,8 @@
   }
   
   .glass-card:hover {
-    transform: translateZ(10px) translateY(-5px) rotateX(1deg) rotateY(-1deg);
-    box-shadow: 0 15px 30px rgba(var(--primary), 0.1), 0 5px 10px rgba(var(--primary), 0.05);
+    transform: translateZ(20px) translateY(-10px) rotateX(2deg) rotateY(-2deg); /* Enhanced 3D effect */
+    box-shadow: 0 20px 40px hsla(var(--primary), 0.15), 0 8px 15px hsla(var(--primary), 0.1); /* Enhanced shadow */
   }
   
   .tech-pill {
@@ -272,23 +273,36 @@
   opacity: 1;
 }
 
-.reveal.fade-bottom { transform: translateY(60px); } /* Increased initial offset */
-.reveal.fade-bottom.active { transform: translateY(0); }
-.reveal.fade-left { transform: translateX(-60px); }
-.reveal.fade-left.active { transform: translateX(0); }
-.reveal.fade-right { transform: translateX(60px); }
-.reveal.fade-right.active { transform: translateX(0); }
+/* Enhanced 3D scroll reveal animations */
+.reveal.fade-bottom { 
+  transform: translateY(60px) rotateX(-15deg); 
+  transform-origin: bottom center;
+}
+.reveal.fade-bottom.active { 
+  transform: translateY(0) rotateX(0deg); 
+}
+
+.reveal.fade-left { 
+  transform: translateX(-60px) rotateY(15deg); 
+  transform-origin: left center;
+}
+.reveal.fade-left.active { 
+  transform: translateX(0) rotateY(0deg); 
+}
+
+.reveal.fade-right { 
+  transform: translateX(60px) rotateY(-15deg); 
+  transform-origin: right center;
+}
+.reveal.fade-right.active { 
+  transform: translateX(0) rotateY(0deg); 
+}
+
 
 /* Enhance skill cards hover - already part of .glass-card hover */
 .skill-card-hover { /* This class is used on SkillCard and ExperienceCard */
   /* transition: all 0.3s ease; Now handled by .glass-card */
 }
-
-/* .skill-card-hover:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 25px -5px hsla(var(--primary), 0.15), 0 10px 10px -5px hsla(var(--primary), 0.1);
-} Now handled by .glass-card hover */
-
 
 /* Pulsing animation for buttons */
 @keyframes pulse-light {
@@ -309,15 +323,6 @@ html {
 /* Improve navigation active state */
 .nav-item-active {
   @apply bg-lavender-500/20 text-foreground font-medium;
-}
-
-/* Improved shadows for cards */
-.enhanced-shadow { /* Already covered by .glass-card and its hover */
-  /* ... */
-}
-
-.enhanced-shadow:hover {
-  /* ... */
 }
 
 /* Ensure tech pill icons are vertically centered if they are not already */

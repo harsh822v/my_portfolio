@@ -28,7 +28,7 @@ export function Hero() {
     initScrollReveal();
     
     return () => {
-      window.removeEventListener('scroll', () => {});
+      window.removeEventListener('scroll', () => {}); // Cleanup scroll listener
     };
   }, []);
   
@@ -41,23 +41,23 @@ export function Hero() {
       
       {/* AI/ML themed floating elements */}
       <div className="absolute inset-0 -z-5 overflow-hidden">
-        <div className="tech-floating tech-icon-1"><Code className="w-8 h-8 text-lavender-600/30" /></div>
-        <div className="tech-floating tech-icon-2"><Database className="w-10 h-10 text-lavender-600/40" /></div>
-        <div className="tech-floating tech-icon-3"><Cpu className="w-12 h-12 text-lavender-600/30" /></div>
-        <div className="tech-floating tech-icon-4"><Server className="w-9 h-9 text-lavender-600/40" /></div>
-        <div className="tech-floating tech-icon-5"><Brain className="w-14 h-14 text-lavender-600/30" /></div>
+        <div className="tech-floating tech-icon-1"><Code className="w-6 h-6 sm:w-8 sm:h-8 text-lavender-600/30" /></div>
+        <div className="tech-floating tech-icon-2"><Database className="w-8 h-8 sm:w-10 sm:h-10 text-lavender-600/40" /></div>
+        <div className="tech-floating tech-icon-3"><Cpu className="w-10 h-10 sm:w-12 sm:h-12 text-lavender-600/30" /></div>
+        <div className="tech-floating tech-icon-4"><Server className="w-7 h-7 sm:w-9 sm:h-9 text-lavender-600/40" /></div>
+        <div className="tech-floating tech-icon-5"><Brain className="w-12 h-12 sm:w-14 sm:h-14 text-lavender-600/30" /></div>
       </div>
 
       <div className="container flex flex-col items-center justify-center gap-12 animate-fade-in relative z-10">
         <div className="max-w-3xl text-center">
           <div className="relative inline-block">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 bg-gradient-to-r from-lavender-600 to-primary bg-clip-text text-transparent reveal fade-bottom relative">
-              <span className="name-icon left-icon absolute -left-12 top-1/2 transform -translate-y-1/2 opacity-70">
-                <Brain className="w-8 h-8 md:w-10 md:h-10" />
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 bg-gradient-to-r from-lavender-600 to-primary bg-clip-text text-transparent reveal fade-bottom relative px-8 sm:px-12">
+              <span className="name-icon left-icon absolute -left-2 sm:-left-6 md:-left-12 top-1/2 transform -translate-y-1/2 opacity-70">
+                <Brain className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10" />
               </span>
               Shukla Harsh Pravinbhai
-              <span className="name-icon right-icon absolute -right-12 top-1/2 transform -translate-y-1/2 opacity-70">
-                <Cpu className="w-8 h-8 md:w-10 md:h-10" />
+              <span className="name-icon right-icon absolute -right-2 sm:-right-6 md:-right-12 top-1/2 transform -translate-y-1/2 opacity-70">
+                <Cpu className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10" />
               </span>
             </h1>
           </div>
