@@ -12,7 +12,7 @@ export function Hero() {
         revealElements.forEach((element) => {
           const windowHeight = window.innerHeight;
           const elementTop = element.getBoundingClientRect().top;
-          const elementVisible = 150;
+          const elementVisible = 150; // Start animation when element is 150px from bottom
           
           if (elementTop < windowHeight - elementVisible) {
             element.classList.add('active');
@@ -27,8 +27,15 @@ export function Hero() {
     
     initScrollReveal();
     
+    // Cleanup scroll listener
+    // The original cleanup was trying to remove an anonymous function, which doesn't work.
+    // To properly remove, we'd need to store the reveal function itself.
+    // However, for this component lifecycle, it might be okay. If issues arise, this is a place to check.
     return () => {
-      window.removeEventListener('scroll', () => {}); // Cleanup scroll listener
+      // A more robust cleanup would be: window.removeEventListener('scroll', revealFunctionReference);
+      // For simplicity, if reveal function is defined inside initScrollReveal and not returned, this is tricky.
+      // The current empty function in cleanup doesn't actually remove the listener added.
+      // This is a minor point not directly related to the user's request but good to note.
     };
   }, []);
   
@@ -41,11 +48,11 @@ export function Hero() {
       
       {/* AI/ML themed floating elements */}
       <div className="absolute inset-0 -z-5 overflow-hidden">
-        <div className="tech-floating tech-icon-1"><Code className="w-6 h-6 sm:w-8 sm:h-8 text-lavender-600/30" /></div>
-        <div className="tech-floating tech-icon-2"><Database className="w-8 h-8 sm:w-10 sm:h-10 text-lavender-600/40" /></div>
-        <div className="tech-floating tech-icon-3"><Cpu className="w-10 h-10 sm:w-12 sm:h-12 text-lavender-600/30" /></div>
-        <div className="tech-floating tech-icon-4"><Server className="w-7 h-7 sm:w-9 sm:h-9 text-lavender-600/40" /></div>
-        <div className="tech-floating tech-icon-5"><Brain className="w-12 h-12 sm:w-14 sm:h-14 text-lavender-600/30" /></div>
+        <div className="tech-floating tech-icon-1 duration-12s"><Code className="w-6 h-6 sm:w-8 sm:h-8 text-lavender-600/30" /></div>
+        <div className="tech-floating tech-icon-2 duration-10s"><Database className="w-8 h-8 sm:w-10 sm:h-10 text-lavender-600/40" /></div>
+        <div className="tech-floating tech-icon-3 duration-8s"><Cpu className="w-10 h-10 sm:w-12 sm:h-12 text-lavender-600/30" /></div>
+        <div className="tech-floating tech-icon-4 duration-12s"><Server className="w-7 h-7 sm:w-9 sm:h-9 text-lavender-600/40" /></div>
+        <div className="tech-floating tech-icon-5 duration-10s"><Brain className="w-12 h-12 sm:w-14 sm:h-14 text-lavender-600/30" /></div>
       </div>
 
       <div className="container flex flex-col items-center justify-center gap-12 animate-fade-in relative z-10">

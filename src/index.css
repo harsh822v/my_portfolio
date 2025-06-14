@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap');
 
 @tailwind base;
@@ -113,7 +112,13 @@
   
   .section-heading::after {
     content: '';
-    @apply absolute bottom-0 left-0 w-1/2 h-1 bg-gradient-to-r from-lavender-600 to-lavender-400 rounded-full;
+    @apply absolute bottom-0 left-0 w-1/2 h-1 bg-gradient-to-r from-lavender-600 to-lavender-400 rounded-full transition-all duration-500 ease-out; /* Smoother transition */
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+
+  .reveal.active .section-heading::after { /* Trigger underline with reveal */
+    transform: scaleX(1);
   }
   
   .glass-card {
@@ -124,6 +129,7 @@
   .glass-card:hover {
     transform: translateZ(20px) translateY(-10px) rotateX(2deg) rotateY(-2deg); /* Enhanced 3D effect */
     box-shadow: 0 20px 40px hsla(var(--primary), 0.15), 0 8px 15px hsla(var(--primary), 0.1); /* Enhanced shadow */
+    @apply border-primary/50; /* Added border highlight */
   }
   
   .tech-pill {
@@ -136,15 +142,14 @@
   
   .nav-link::after {
     content: '';
-    @apply absolute w-0 h-0.5 bg-gradient-to-r from-lavender-600 to-lavender-400 left-0 -bottom-0.5 transition-all duration-300;
+    @apply absolute w-full h-0.5 bg-gradient-to-r from-lavender-600 to-lavender-400 left-0 -bottom-0.5 transition-transform duration-300 ease-out; /* Use transform for better animation */
+    transform: scaleX(0);
+    transform-origin: center; /* Underline grows from center */
   }
   
-  .nav-link:hover::after {
-    @apply w-full;
-  }
-  
-  .nav-link.active::after {
-    @apply w-full;
+  .nav-link:hover::after,
+  .nav-link.active::after { /* Apply to active state as well */
+    transform: scaleX(1); /* Grow to full width */
   }
 }
 
@@ -204,25 +209,43 @@
 .tech-floating {
   position: absolute;
   opacity: 0.5;
-  animation-name: float;
-  animation-duration: 10s;
+  animation-name: float-var1; /* Default to var1 */
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
 }
 
-.tech-icon-1 { top: 15%; left: 15%; animation-delay: 0s; }
-.tech-icon-2 { top: 25%; right: 20%; animation-delay: 1.5s; }
-.tech-icon-3 { bottom: 25%; left: 20%; animation-delay: 3s; }
-.tech-icon-4 { bottom: 35%; right: 15%; animation-delay: 4.5s; }
-.tech-icon-5 { top: 50%; left: 10%; animation-delay: 6s; }
+.tech-floating.duration-8s { animation-duration: 8s; }
+.tech-floating.duration-10s { animation-duration: 10s; }
+.tech-floating.duration-12s { animation-duration: 12s; }
 
-@keyframes float {
+/* Keyframe variations for floating icons */
+@keyframes float-var1 { /* Original */
   0% { transform: translateY(0) translateX(0) rotate(0deg) scale(1); }
   25% { transform: translateY(-15px) translateX(15px) rotate(7deg) scale(1.05); }
   50% { transform: translateY(0) translateX(0) rotate(0deg) scale(1); }
   75% { transform: translateY(15px) translateX(-15px) rotate(-7deg) scale(1.05); }
   100% { transform: translateY(0) translateX(0) rotate(0deg) scale(1); }
 }
+
+@keyframes float-var2 { /* Slightly different path or rotation */
+  0% { transform: translateY(0) translateX(0) rotate(0deg) scale(1); }
+  25% { transform: translateY(10px) translateX(-10px) rotate(-5deg) scale(1.03); }
+  50% { transform: translateY(0) translateX(0) rotate(0deg) scale(1); }
+  75% { transform: translateY(-10px) translateX(10px) rotate(5deg) scale(1.03); }
+  100% { transform: translateY(0) translateX(0) rotate(0deg) scale(1); }
+}
+
+@keyframes float-var3 { /* More vertical movement */
+  0% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-20px) scale(1.08); }
+  100% { transform: translateY(0px) scale(1); }
+}
+
+.tech-icon-1 { top: 15%; left: 15%; animation-delay: 0s; animation-name: float-var1; }
+.tech-icon-2 { top: 25%; right: 20%; animation-delay: 1.5s; animation-name: float-var2; }
+.tech-icon-3 { bottom: 25%; left: 20%; animation-delay: 3s; animation-name: float-var3; }
+.tech-icon-4 { bottom: 35%; right: 15%; animation-delay: 4.5s; animation-name: float-var1; }
+.tech-icon-5 { top: 50%; left: 10%; animation-delay: 6s; animation-name: float-var2; }
 
 .name-icon {
   animation: pulse 2s infinite;
@@ -297,7 +320,6 @@
 .reveal.fade-right.active { 
   transform: translateX(0) rotateY(0deg); 
 }
-
 
 /* Enhance skill cards hover - already part of .glass-card hover */
 .skill-card-hover { /* This class is used on SkillCard and ExperienceCard */
