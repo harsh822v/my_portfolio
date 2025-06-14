@@ -1,5 +1,4 @@
-
-import { ArrowDown, Brain, Cpu, Database, Code, Server } from 'lucide-react';
+import { ArrowDown, Brain, Cpu, Database, Code, Server, Linkedin, Github, Mail, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useEffect } from 'react';
 
@@ -50,7 +49,7 @@ export function Hero() {
       </div>
 
       <div className="container flex flex-col items-center justify-center gap-12 animate-fade-in relative z-10">
-        <div className="max-w-2xl text-center">
+        <div className="max-w-3xl text-center">
           <div className="relative inline-block">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 bg-gradient-to-r from-lavender-600 to-primary bg-clip-text text-transparent reveal fade-bottom relative">
               <span className="name-icon left-icon absolute -left-12 top-1/2 transform -translate-y-1/2 opacity-70">
@@ -63,12 +62,32 @@ export function Hero() {
             </h1>
           </div>
           <h2 className="text-xl md:text-2xl mb-6 text-foreground/80 ai-typing-effect">
-            Aspiring Software Developer
+            Aspiring AI/ML Engineer & Software Developer
           </h2>
           <p className="text-lg text-foreground/70 mb-8 reveal fade-bottom">
-            Expertise in Java, Python, and Data Science libraries. Passionate about AI/ML, 
-            backend development, and building scalable applications.
+            Passionate and detail-oriented Data Analyst and Aspiring AI/ML Engineer with a strong foundation in Python, machine learning, data visualization, and backend development. Skilled in building data-driven applications, analyzing complex datasets, and deploying real-time AI solutions. Eager to contribute to an innovative MNC by leveraging technical expertise, problem-solving skills, and collaborative mindset to extract insights and build intelligent systems that drive business impact.
           </p>
+
+          <div className="flex flex-wrap gap-3 justify-center mb-8 reveal fade-bottom">
+            <a href="tel:+919601026883" className="flex items-center text-sm text-foreground/70 hover:text-primary transition-colors">
+              <Phone className="w-4 h-4 mr-1.5" /> +91 9601026883
+            </a>
+            <a href="mailto:harsh206090307117@gmail.com" className="flex items-center text-sm text-foreground/70 hover:text-primary transition-colors">
+              <Mail className="w-4 h-4 mr-1.5" /> harsh206090307117@gmail.com
+            </a>
+          </div>
+          <div className="flex flex-wrap gap-4 justify-center mb-8 reveal fade-bottom">
+            <a href="https://www.linkedin.com/in/harsh-shukla-4a3916228/" target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-primary transition-colors">
+              <Linkedin className="w-6 h-6" />
+            </a>
+            <a href="https://github.com/harsh822v" target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-primary transition-colors">
+              <Github className="w-6 h-6" />
+            </a>
+             <a href="#achievements" className="text-foreground/70 hover:text-primary transition-colors text-sm flex items-center">
+              Certifications
+            </a>
+          </div>
+          
           <div className="flex flex-wrap gap-4 justify-center reveal fade-bottom">
             <Button asChild className="rounded-full btn-pulse-effect bg-gradient-to-r from-lavender-600 to-lavender-500 hover:from-lavender-700 hover:to-lavender-600">
               <a href="#contact">Contact Me</a>

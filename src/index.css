@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap');
 
 @tailwind base;
@@ -98,6 +97,7 @@
 
   body {
     @apply bg-background text-foreground antialiased;
+    perspective: 1000px; /* For 3D effects on child elements */
   }
 
   html {
@@ -117,10 +117,16 @@
   
   .glass-card {
     @apply bg-background/40 backdrop-blur-sm border border-border rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl;
+    transform-style: preserve-3d; 
+  }
+  
+  .glass-card:hover {
+    transform: translateZ(10px) translateY(-5px) rotateX(1deg) rotateY(-1deg);
+    box-shadow: 0 15px 30px rgba(var(--primary), 0.1), 0 5px 10px rgba(var(--primary), 0.05);
   }
   
   .tech-pill {
-    @apply px-3 py-1 rounded-full text-sm font-medium bg-secondary text-secondary-foreground transition-all hover:bg-[#B794F4] hover:text-white transform hover:scale-105;
+    @apply px-3 py-1 rounded-full text-sm font-medium bg-secondary text-secondary-foreground transition-all hover:bg-lavender-500 hover:text-white transform hover:scale-105;
   }
   
   .nav-link {
@@ -149,7 +155,7 @@
 
 @keyframes blink-caret {
   from, to { border-color: transparent }
-  50% { border-color: #B794F4 }
+  50% { border-color: hsl(var(--primary)) } /* Use primary color */
 }
 
 @keyframes continuous-typing {
@@ -161,7 +167,7 @@
   display: inline-block;
   overflow: hidden;
   white-space: nowrap;
-  border-right: 3px solid #B794F4;
+  border-right: 3px solid hsl(var(--primary)); /* Use primary color */
   animation: 
     typing 3s steps(40) 1s forwards,
     blink-caret 0.75s step-end infinite;
@@ -171,7 +177,7 @@
   display: inline-block;
   overflow: hidden;
   white-space: nowrap;
-  border-right: 3px solid #B794F4;
+  border-right: 3px solid hsl(var(--primary)); /* Use primary color */
   width: 0;
   animation: 
     continuous-typing 8s steps(40) infinite,
@@ -183,12 +189,12 @@
   display: inline-block;
   overflow: hidden;
   white-space: nowrap;
-  border-right: 3px solid #B794F4;
+  border-right: 3px solid hsl(var(--primary)); /* Use primary color */
   width: 0;
   animation: 
     continuous-typing 8s steps(40) infinite,
     blink-caret 0.75s step-end infinite;
-  background: linear-gradient(to right, #9b87f5, #7E69AB);
+  background: linear-gradient(to right, hsl(var(--lavender-500)), hsl(var(--primary))); /* Updated gradient */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 500;
@@ -203,78 +209,55 @@
   animation-iteration-count: infinite;
 }
 
-.tech-icon-1 {
-  top: 15%;
-  left: 15%;
-  animation-delay: 0s;
-}
-
-.tech-icon-2 {
-  top: 25%;
-  right: 20%;
-  animation-delay: 1.5s;
-}
-
-.tech-icon-3 {
-  bottom: 25%;
-  left: 20%;
-  animation-delay: 3s;
-}
-
-.tech-icon-4 {
-  bottom: 35%;
-  right: 15%;
-  animation-delay: 4.5s;
-}
-
-.tech-icon-5 {
-  top: 50%;
-  left: 10%;
-  animation-delay: 6s;
-}
+.tech-icon-1 { top: 15%; left: 15%; animation-delay: 0s; }
+.tech-icon-2 { top: 25%; right: 20%; animation-delay: 1.5s; }
+.tech-icon-3 { bottom: 25%; left: 20%; animation-delay: 3s; }
+.tech-icon-4 { bottom: 35%; right: 15%; animation-delay: 4.5s; }
+.tech-icon-5 { top: 50%; left: 10%; animation-delay: 6s; }
 
 @keyframes float {
-  0% { transform: translateY(0) translateX(0) rotate(0); }
-  25% { transform: translateY(-10px) translateX(10px) rotate(5deg); }
-  50% { transform: translateY(0) translateX(0) rotate(0); }
-  75% { transform: translateY(10px) translateX(-10px) rotate(-5deg); }
-  100% { transform: translateY(0) translateX(0) rotate(0); }
+  0% { transform: translateY(0) translateX(0) rotate(0deg) scale(1); }
+  25% { transform: translateY(-15px) translateX(15px) rotate(7deg) scale(1.05); }
+  50% { transform: translateY(0) translateX(0) rotate(0deg) scale(1); }
+  75% { transform: translateY(15px) translateX(-15px) rotate(-7deg) scale(1.05); }
+  100% { transform: translateY(0) translateX(0) rotate(0deg) scale(1); }
 }
 
 .name-icon {
   animation: pulse 2s infinite;
-  color: #9b87f5;
+  color: hsl(var(--primary)); /* Use primary color */
 }
 
 @keyframes pulse {
   0% { transform: translateY(-50%) scale(1); opacity: 0.7; }
-  50% { transform: translateY(-50%) scale(1.1); opacity: 1; }
+  50% { transform: translateY(-50%) scale(1.15); opacity: 1; }
   100% { transform: translateY(-50%) scale(1); opacity: 0.7; }
 }
 
 .ai-theme-bg {
   background: 
-    radial-gradient(circle at 0% 0%, rgba(155, 135, 245, 0.1) 0%, transparent 25%),
-    radial-gradient(circle at 100% 100%, rgba(155, 135, 245, 0.1) 0%, transparent 25%);
+    radial-gradient(circle at 0% 0%, hsla(var(--primary), 0.1) 0%, transparent 30%),
+    radial-gradient(circle at 100% 100%, hsla(var(--primary), 0.1) 0%, transparent 30%),
+    hsl(var(--background)); /* Ensure base background color */
 }
 
 .ai-card-border {
-  border: 1px solid rgba(155, 135, 245, 0.3);
-  box-shadow: 0 4px 20px rgba(155, 135, 245, 0.1);
+  border: 1px solid hsla(var(--primary), 0.3);
+  box-shadow: 0 4px 20px hsla(var(--primary), 0.08);
 }
 
 .ai-card-border:hover {
-  border-color: rgba(155, 135, 245, 0.5);
-  box-shadow: 0 8px 30px rgba(155, 135, 245, 0.2);
+  border-color: hsla(var(--primary), 0.5);
+  box-shadow: 0 8px 30px hsla(var(--primary), 0.15);
 }
 
 .tech-icon-pulse {
-  animation: icon-pulse 2s infinite;
+  animation: icon-pulse 2.5s infinite ease-in-out;
 }
 
 @keyframes icon-pulse {
   0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
+  50% { transform: scale(1.15); }
   100% { transform: scale(1); }
 }
 
@@ -282,62 +265,40 @@
 .reveal {
   position: relative;
   opacity: 0;
-  transition: all 1s ease;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Adjusted transition */
 }
 
 .reveal.active {
   opacity: 1;
 }
 
-.reveal.fade-bottom {
-  transform: translateY(50px);
+.reveal.fade-bottom { transform: translateY(60px); } /* Increased initial offset */
+.reveal.fade-bottom.active { transform: translateY(0); }
+.reveal.fade-left { transform: translateX(-60px); }
+.reveal.fade-left.active { transform: translateX(0); }
+.reveal.fade-right { transform: translateX(60px); }
+.reveal.fade-right.active { transform: translateX(0); }
+
+/* Enhance skill cards hover - already part of .glass-card hover */
+.skill-card-hover { /* This class is used on SkillCard and ExperienceCard */
+  /* transition: all 0.3s ease; Now handled by .glass-card */
 }
 
-.reveal.fade-bottom.active {
-  transform: translateY(0);
-}
-
-.reveal.fade-left {
-  transform: translateX(-50px);
-}
-
-.reveal.fade-left.active {
-  transform: translateX(0);
-}
-
-.reveal.fade-right {
-  transform: translateX(50px);
-}
-
-.reveal.fade-right.active {
-  transform: translateX(0);
-}
-
-/* Enhance skill cards hover */
-.skill-card-hover {
-  transition: all 0.3s ease;
-}
-
-.skill-card-hover:hover {
+/* .skill-card-hover:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 25px -5px rgba(155, 135, 245, 0.15), 0 10px 10px -5px rgba(155, 135, 245, 0.1);
-}
+  box-shadow: 0 20px 25px -5px hsla(var(--primary), 0.15), 0 10px 10px -5px hsla(var(--primary), 0.1);
+} Now handled by .glass-card hover */
+
 
 /* Pulsing animation for buttons */
 @keyframes pulse-light {
-  0% {
-    box-shadow: 0 0 0 0 rgba(183, 148, 244, 0.7);
-  }
-  70% {
-    box-shadow: 0 0 0 10px rgba(183, 148, 244, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(183, 148, 244, 0);
-  }
+  0% { box-shadow: 0 0 0 0 hsla(var(--primary), 0.6); }
+  70% { box-shadow: 0 0 0 12px hsla(var(--primary), 0); } /* Increased spread */
+  100% { box-shadow: 0 0 0 0 hsla(var(--primary), 0); }
 }
 
 .btn-pulse-effect:hover {
-  animation: pulse-light 2s infinite;
+  animation: pulse-light 1.8s infinite; /* Slightly faster */
 }
 
 /* Add smooth scroll to the page */
@@ -351,16 +312,15 @@ html {
 }
 
 /* Improved shadows for cards */
-.enhanced-shadow {
-  box-shadow: 
-    0 10px 15px -3px rgba(155, 135, 245, 0.1),
-    0 4px 6px -2px rgba(155, 135, 245, 0.05),
-    0 0 0 1px rgba(155, 135, 245, 0.05);
+.enhanced-shadow { /* Already covered by .glass-card and its hover */
+  /* ... */
 }
 
 .enhanced-shadow:hover {
-  box-shadow: 
-    0 20px 25px -5px rgba(155, 135, 245, 0.1),
-    0 10px 10px -5px rgba(155, 135, 245, 0.04),
-    0 0 0 1px rgba(155, 135, 245, 0.05);
+  /* ... */
+}
+
+/* Ensure tech pill icons are vertically centered if they are not already */
+.tech-pill img {
+  align-self: center; /* Explicitly center icon if needed */
 }
