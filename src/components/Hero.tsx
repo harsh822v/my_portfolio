@@ -42,64 +42,69 @@ export function Hero() {
   return (
     <section 
       id="home" 
-      className="min-h-screen flex items-center justify-center py-20 px-4 relative overflow-hidden"
+      className="min-h-screen flex items-center justify-center py-12 sm:py-16 lg:py-20 px-4 relative overflow-hidden"
+      style={{ perspective: '1200px', transformStyle: 'preserve-3d' }}
     >
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(121,80,255,0.3),rgba(255,255,255,0))]"></div>
+      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-primary/10 via-accent/5 to-secondary/10"></div>
       
-      {/* AI/ML themed floating elements */}
-      <div className="absolute inset-0 -z-5 overflow-hidden">
-        <div className="tech-floating tech-icon-1 duration-12s"><Code className="w-6 h-6 sm:w-8 sm:h-8 text-lavender-600/30" /></div>
-        <div className="tech-floating tech-icon-2 duration-10s"><Database className="w-8 h-8 sm:w-10 sm:h-10 text-lavender-600/40" /></div>
-        <div className="tech-floating tech-icon-3 duration-8s"><Cpu className="w-10 h-10 sm:w-12 sm:h-12 text-lavender-600/30" /></div>
-        <div className="tech-floating tech-icon-4 duration-12s"><Server className="w-7 h-7 sm:w-9 sm:h-9 text-lavender-600/40" /></div>
-        <div className="tech-floating tech-icon-5 duration-10s"><Brain className="w-12 h-12 sm:w-14 sm:h-14 text-lavender-600/30" /></div>
+      {/* Enhanced 3D AI/ML themed floating elements */}
+      <div className="absolute inset-0 -z-5 overflow-hidden" style={{ transformStyle: 'preserve-3d' }}>
+        <div className="tech-floating tech-icon-1"><Code className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 text-primary/40" /></div>
+        <div className="tech-floating tech-icon-2"><Database className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-accent/50" /></div>
+        <div className="tech-floating tech-icon-3"><Cpu className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 text-secondary/40" /></div>
+        <div className="tech-floating tech-icon-4"><Server className="w-7 h-7 sm:w-9 sm:h-9 lg:w-11 lg:h-11 text-primary/50" /></div>
+        <div className="tech-floating tech-icon-5"><Brain className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-accent/40" /></div>
       </div>
 
-      <div className="container flex flex-col items-center justify-center gap-12 animate-fade-in relative z-10">
-        <div className="max-w-3xl text-center">
+      <div className="container flex flex-col items-center justify-center gap-8 sm:gap-12 animate-fade-in relative z-10">
+        <div className="max-w-4xl text-center">
           <div className="relative inline-block">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 bg-gradient-to-r from-lavender-600 to-primary bg-clip-text text-transparent reveal fade-bottom relative px-8 sm:px-12">
-              <span className="name-icon left-icon absolute -left-2 sm:-left-6 md:-left-12 top-1/2 transform -translate-y-1/2 opacity-70">
-                <Brain className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10" />
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 sm:mb-6 bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent reveal fade-bottom relative px-4 sm:px-8 lg:px-12">
+              <span className="name-icon left-icon absolute -left-1 sm:-left-2 md:-left-6 lg:-left-12 top-1/2 transform -translate-y-1/2 opacity-70">
+                <Brain className="w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8 lg:w-10 lg:h-10" />
               </span>
               Shukla Harsh Pravinbhai
-              <span className="name-icon right-icon absolute -right-2 sm:-right-6 md:-right-12 top-1/2 transform -translate-y-1/2 opacity-70">
-                <Cpu className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10" />
+              <span className="name-icon right-icon absolute -right-1 sm:-right-2 md:-right-6 lg:-right-12 top-1/2 transform -translate-y-1/2 opacity-70">
+                <Cpu className="w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8 lg:w-10 lg:h-10" />
               </span>
             </h1>
           </div>
-          <h2 className="text-xl md:text-2xl mb-6 text-foreground/80 ai-typing-effect">
-            Aspiring AI/ML Engineer & Software Developer
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-4 sm:mb-6 text-foreground/80 reveal fade-bottom">
+            Aspiring AI/ML Engineer & Data Scientist
           </h2>
-          <p className="text-lg text-foreground/70 mb-8 reveal fade-bottom">
-            Passionate and detail-oriented Data Analyst and Aspiring AI/ML Engineer with a strong foundation in Python, machine learning, data visualization, and backend development. Skilled in building data-driven applications, analyzing complex datasets, and deploying real-time AI solutions. Eager to contribute to an innovative MNC by leveraging technical expertise, problem-solving skills, and collaborative mindset to extract insights and build intelligent systems that drive business impact.
+          <p className="text-sm sm:text-base lg:text-lg text-foreground/70 mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed reveal fade-bottom">
+            Passionate and detail-oriented Data Analyst and Aspiring AI/ML Engineer with a strong foundation in Python, machine learning, data visualization, and backend development. Skilled in building data-driven applications, analyzing complex datasets, and deploying real-time AI solutions.
           </p>
 
-          <div className="flex flex-wrap gap-3 justify-center mb-8 reveal fade-bottom">
-            <a href="tel:+919601026883" className="flex items-center text-sm text-foreground/70 hover:text-primary transition-colors">
-              <Phone className="w-4 h-4 mr-1.5" /> +91 9601026883
+          <div className="flex flex-wrap gap-2 sm:gap-3 justify-center mb-6 sm:mb-8 reveal fade-bottom">
+            <a href="tel:+919601026883" className="flex items-center text-xs sm:text-sm text-foreground/70 hover:text-primary transition-all duration-300 transform hover:scale-105">
+              <Phone className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5" /> +91 9601026883
             </a>
-            <a href="mailto:harsh206090307117@gmail.com" className="flex items-center text-sm text-foreground/70 hover:text-primary transition-colors">
-              <Mail className="w-4 h-4 mr-1.5" /> harsh206090307117@gmail.com
+            <a href="mailto:harsh206090307117@gmail.com" className="flex items-center text-xs sm:text-sm text-foreground/70 hover:text-primary transition-all duration-300 transform hover:scale-105">
+              <Mail className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5" /> harsh206090307117@gmail.com
             </a>
           </div>
-          <div className="flex flex-wrap gap-4 justify-center mb-8 reveal fade-bottom">
-            <a href="https://www.linkedin.com/in/harsh-shukla-4a3916228/" target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-primary transition-colors">
-              <Linkedin className="w-6 h-6" />
+          
+          <div className="flex flex-wrap gap-3 sm:gap-4 justify-center mb-6 sm:mb-8 reveal fade-bottom">
+            <a href="https://www.linkedin.com/in/harsh-shukla-4a3916228/" target="_blank" rel="noopener noreferrer" 
+               className="text-foreground/70 hover:text-primary transition-all duration-300 transform hover:scale-110 hover:rotate-6">
+              <Linkedin className="w-5 h-5 sm:w-6 sm:h-6" />
             </a>
-            <a href="https://github.com/harsh822v" target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-primary transition-colors">
-              <Github className="w-6 h-6" />
+            <a href="https://github.com/harsh822v" target="_blank" rel="noopener noreferrer" 
+               className="text-foreground/70 hover:text-primary transition-all duration-300 transform hover:scale-110 hover:-rotate-6">
+              <Github className="w-5 h-5 sm:w-6 sm:h-6" />
             </a>
-             <a href="#achievements" className="text-foreground/70 hover:text-primary transition-colors text-sm flex items-center">
+            <a href="#achievements" 
+               className="text-foreground/70 hover:text-primary transition-all duration-300 text-xs sm:text-sm flex items-center transform hover:scale-105">
               Certifications
             </a>
           </div>
           
-          <div className="flex flex-wrap gap-4 justify-center reveal fade-bottom">
-            <Button asChild className="rounded-full btn-pulse-effect bg-gradient-to-r from-lavender-600 to-lavender-500 hover:from-lavender-700 hover:to-lavender-600">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center reveal fade-bottom">
+            <Button asChild className="rounded-full btn-pulse-effect bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-base font-semibold transform transition-all duration-300">
               <a href="#contact">Contact Me</a>
             </Button>
-            <Button asChild variant="outline" className="rounded-full hover:shadow-md border-lavender-500">
+            <Button asChild variant="outline" className="rounded-full hover:shadow-lg border-primary/50 hover:border-primary hover:bg-primary/10 px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-base font-semibold transform transition-all duration-300">
               <a href="#projects">View Projects</a>
             </Button>
           </div>
@@ -108,10 +113,10 @@ export function Hero() {
       
       <a 
         href="#about" 
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce"
+        className="absolute bottom-6 sm:bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce hover:scale-110 transition-transform duration-300"
         aria-label="Scroll to About section"
       >
-        <ArrowDown className="w-6 h-6 text-primary" />
+        <ArrowDown className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
       </a>
     </section>
   );

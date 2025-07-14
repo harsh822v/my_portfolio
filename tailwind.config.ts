@@ -122,6 +122,45 @@ export default {
 						'animation-timing-function': 'cubic-bezier(0, 0, 0.2, 1)',
 					},
 				},
+				'float3D': {
+					'0%, 100%': { 
+						transform: 'translateY(0) translateX(0) translateZ(0) rotateX(0deg) rotateY(0deg)',
+					},
+					'25%': { 
+						transform: 'translateY(-30px) translateX(15px) translateZ(10px) rotateX(10deg) rotateY(5deg)',
+					},
+					'50%': { 
+						transform: 'translateY(-20px) translateX(-10px) translateZ(20px) rotateX(-5deg) rotateY(10deg)',
+					},
+					'75%': { 
+						transform: 'translateY(-40px) translateX(20px) translateZ(5px) rotateX(15deg) rotateY(-5deg)',
+					},
+				},
+				'rotate3D': {
+					'0%': { transform: 'rotateZ(0deg)' },
+					'100%': { transform: 'rotateZ(360deg)' },
+				},
+				'gradientShift': {
+					'0%': { backgroundPosition: '0% 50%' },
+					'50%': { backgroundPosition: '100% 50%' },
+					'100%': { backgroundPosition: '0% 50%' },
+				},
+				'pulse3D': {
+					'0%': { 
+						boxShadow: '0 10px 30px rgba(67, 56, 202, 0.3), 0 5px 15px rgba(0, 0, 0, 0.1), 0 0 0 0 rgba(67, 56, 202, 0.6)',
+					},
+					'70%': { 
+						boxShadow: '0 10px 30px rgba(67, 56, 202, 0.3), 0 5px 15px rgba(0, 0, 0, 0.1), 0 0 0 15px rgba(67, 56, 202, 0)',
+					},
+					'100%': { 
+						boxShadow: '0 10px 30px rgba(67, 56, 202, 0.3), 0 5px 15px rgba(0, 0, 0, 0.1), 0 0 0 0 rgba(67, 56, 202, 0)',
+					},
+				},
+				'backgroundFloat': {
+					'0%, 100%': { transform: 'translateZ(-50px) rotateX(0deg) rotateY(0deg)' },
+					'33%': { transform: 'translateZ(-40px) rotateX(2deg) rotateY(1deg)' },
+					'66%': { transform: 'translateZ(-60px) rotateX(-1deg) rotateY(-2deg)' },
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
@@ -135,6 +174,22 @@ export default {
 				'slide-out': 'slide-out 0.5s ease-out',
 				'slide-out-right': 'slide-out-right 0.5s ease-out',
 				'bounce': 'bounce 1s infinite',
+				'float3D': 'float3D 12s ease-in-out infinite',
+				'rotate3D': 'rotate3D 20s linear infinite',
+				'gradientShift': 'gradientShift 4s ease infinite',
+				'pulse3D': 'pulse3D 2s infinite',
+				'backgroundFloat': 'backgroundFloat 30s ease-in-out infinite',
+			},
+			perspective: {
+				'none': 'none',
+				'500': '500px',
+				'1000': '1000px',
+				'1200': '1200px',
+				'2000': '2000px',
+			},
+			transformStyle: {
+				'flat': 'flat',
+				'preserve-3d': 'preserve-3d',
 			},
 			fontFamily: {
 				sans: ['Inter', 'sans-serif'],
