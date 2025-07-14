@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Navbar } from '@/components/Navbar';
 import { Hero } from '@/components/Hero';
+import { ObjectiveSection } from '@/components/ObjectiveSection';
 import { About } from '@/components/About';
 import { Education } from '@/components/Education';
 import { Experience } from '@/components/Experience';
@@ -69,6 +70,7 @@ const Index = () => {
     <div className="min-h-screen overflow-x-hidden ai-theme-bg">
       <Navbar />
       <Hero />
+      <ObjectiveSection />
       <About />
       <Education />
       <Experience />

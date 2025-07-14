@@ -61,11 +61,11 @@ const projectsData = [
 
 export function Projects() {
   return (
-    <section id="projects" className="py-20 px-4">
+    <section id="projects" className="py-20 px-4 bg-gradient-to-br from-primary/5 via-secondary/10 to-accent/5">
       <div className="container mx-auto">
-        <h2 className="section-heading reveal fade-bottom">Projects</h2>
+        <h2 className="section-heading reveal fade-bottom bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">Featured Projects</h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mt-12">
           {projectsData.map((project, index) => (
             <div key={project.title} className="reveal fade-bottom" style={{ transitionDelay: `${index * 0.15}s` }}>
               <ProjectCard 

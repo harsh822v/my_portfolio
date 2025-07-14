@@ -10,18 +10,8 @@ const achievements = [
   },
   {
     title: "Data Analysis With Python",
-    description: "Learned Pandas, NumPy, and data visualization.", // from freeCodeCamp - as per resume, if applicable
-    date: "March 2025" // Resume has March 2025
-  },
-  {
-    title: "Coding: Development & Advanced Engineering Job Simulation",
-    description: "Hands-on training in software development via Forage.", // Resume: Forage
-    date: "March 2025" // Resume has March 2025
-  },
-  {
-    title: "Walmart USA Advanced Software Engineering Virtual Experience Program",
-    description: "Completed the virtual experience program on Forage.",
-    date: "April 2025" // Resume has April 2025
+    description: "Learned Pandas, NumPy, and data visualization.",
+    date: "March 2025"
   },
   {
     title: "HackElevate(Hackathon) - 2025 winner",
@@ -29,13 +19,13 @@ const achievements = [
     date: "March 2025"
   },
   {
-    title: "NCAT Test - Naukri Campus Aptitude Test",
-    description: "Successfully completed the Naukri Campus Aptitude Test.",
-    date: "April 2025"
+    title: "Cisco - Data Analytics essentials",
+    description: "Completed comprehensive course on data analytics fundamentals.",
+    date: "July 2025"
   },
   {
     title: "Kaggle - Intro to Machine Learning",
-    description: "Completed introductory course on Machine Learning fundamentals on Kaggle.",
+    description: "Completed introductory course on Machine Learning fundamentals.",
     date: "April 2025"
   },
   {
@@ -72,9 +62,9 @@ export function Achievements() {
 
 
   return (
-    <section id="achievements" className="py-20 px-4 bg-secondary/30">
+    <section id="achievements" className="py-20 px-4 bg-gradient-to-br from-accent/10 via-secondary/20 to-primary/5">
       <div className="container mx-auto">
-        <h2 className="section-heading reveal fade-bottom">Achievements & Certifications</h2>
+        <h2 className="section-heading reveal fade-bottom bg-gradient-to-r from-accent via-primary to-secondary bg-clip-text text-transparent">Achievements & Certifications</h2>
         
         <div className="mt-12 glass-card p-8 reveal fade-bottom">
           <div className="space-y-2">

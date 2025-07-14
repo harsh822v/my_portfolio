@@ -55,11 +55,11 @@ const apis = [
 
 export function Skills() {
   return (
-    <section id="skills" className="py-20 px-4 bg-secondary/30">
+    <section id="skills" className="py-20 px-4 bg-gradient-to-br from-secondary/20 via-accent/10 to-primary/5">
       <div className="container mx-auto">
-        <h2 className="section-heading reveal fade-bottom">Skills</h2>
+        <h2 className="section-heading reveal fade-bottom bg-gradient-to-r from-secondary via-primary to-accent bg-clip-text text-transparent">Technical Skills</h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mt-12">
           <SkillCard title="Programming & AI/ML">
             {programmingSkills.map((skill) => (
               <TechPill key={skill.name} name={skill.name} icon={skill.icon} />
